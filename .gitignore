@@ -1,0 +1,7 @@
+*.local.*
+*.orig
+__pycache__
+
+/_*/
+/docs/_build/
+/tmp/
