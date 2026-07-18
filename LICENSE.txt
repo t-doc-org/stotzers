@@ -1,4 +1,4 @@
-Copyright {YEAR} {AUTHOR} <{EMAIL}>
+Copyright 2026 Sylvain Stotzer <sylvain.stotzer@edufr.ch>
 
 https://creativecommons.org/licenses/by-nc-sa/4.0/
 
