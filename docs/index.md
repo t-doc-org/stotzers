@@ -6,10 +6,8 @@
 Ceci est la première version du cours en ligne.
 Le site est encore en cours de développement et évoluera tout au long de l'année
 scolaire.
-Mais c'est déjà un début!
+Version 20:31
 
-
-et ça continue d'avancer
 ## Thèmes
 
 ```{toctree}
@@ -18,4 +16,4 @@ python/index
 
 ## Références
 
-Je remercie tout particulièrement remy Blank pour le développement et le partage de la plateforme t-doc.
+Je remercie tout particulièrement Remy Blank pour le développement et le partage de la plateforme t-doc.
