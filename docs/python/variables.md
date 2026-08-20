@@ -1,4 +1,4 @@
-% Copyright 2024 Caroline Blank <caro@c-space.org>
+% Copyright 2026 Sylvain Stotzer <sylvain.stotzer@edufr.ch>
 % SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 # Variables
