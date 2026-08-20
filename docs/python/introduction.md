@@ -82,6 +82,7 @@ Il a décidé de baptiser ce projet Python, car il est fan de la série télévi
 ## Le langage Python
 Voici les 33 mots-clés du langage Python : 
 
+{.reset .table-example}
 |and  | as     |assert  | break |class | continue | def |
 | del| elif | else   | except |False |finally | for  |
 | from| global|if   | import | in     | is     | lambda |
