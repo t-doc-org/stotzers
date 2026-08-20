@@ -74,11 +74,24 @@ besoins:
 ## Python
 
 Le langage Python a été créé par [Guido Van Rossen](https://fr.wikipedia.org/wiki/Guido_van_Rossum)
-en 1989. Il a écrit une première version pendant ses vacances de Noël. La
-première version publique a été publiée en février 1991.
+en 1989. Il a écrit une première version pendant ses vacances de Noël. La première version publique a été publiée en février 1991.
 
 Il a décidé de baptiser ce projet Python, car il est fan de la série télévisée
 ***Monty Python's Flying Circus***.
+
+## Le langage Python
+Voici les 33 mots-clés du langage Python : 
+
+|and  | as     |assert  | break |class | continue | def |
+| del| elif | else   | except |False |finally | for  |
+| from| global|if   | import | in     | is     | lambda |
+|None  | nonlocal |not  | or | pass|raise| return |
+| True |try    | while  | with | yield |   
+
+Remarques: 
+- Python est sensible à la casse (il fait la différences entre minuscules et majuscules)
+- Les mots-clés booléens True et False prennent obligatoirement une majuscule initiale.
+- la commande print(), n'est pas un mot clé mais une fonction builtin.
 
 ## Pourquoi apprendre Python à l'école
 
@@ -89,6 +102,7 @@ Il a décidé de baptiser ce projet Python, car il est fan de la série télévi
     - interface Web
     - analyse de données
     - intelligence artificielle
+	- robotique
     - scripting
     - jeux
     - ...
