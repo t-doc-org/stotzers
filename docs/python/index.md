@@ -3,6 +3,8 @@
 
 # Python
 
+Contenu du cours
+
 ```{toctree}
 introduction
 algorithme
