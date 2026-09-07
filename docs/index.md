@@ -6,7 +6,7 @@
 Ceci est la première version du cours en ligne.
 Le site est encore en cours de développement et évoluera tout au long de l'année
 scolaire.
-Version 20:31
+
 
 ## Thèmes
 
@@ -14,6 +14,21 @@ Version 20:31
 python/index
 ```
 
-## Références
 
-Je remercie tout particulièrement Remy Blank pour le développement et le partage de la plateforme t-doc.
+## Divers
+
+```{toctree}
+logiciels/index
+```
+
+## Liens
+
+```{toctree}
+liens
+```
+
+## Remerciements
+
+Ce cours est très largement inspiré du [cours de Caroline Blank](https://informatique.t-doc.org), que je remercie vivement.
+
+Je remercie également Remy Blank pour le développement et le partage de la plateforme [t-doc](https://pypi.org/project/t-doc-common/).
