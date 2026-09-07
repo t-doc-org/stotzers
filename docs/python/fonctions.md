@@ -1,4 +1,4 @@
-% Copyright 2024 Caroline Blank <caro@c-space.org>
+% Copyright 2026 Sylvain Stotzer <sylvain.stotzer@edufr.ch>
 % SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 # Fonctions
@@ -74,7 +74,9 @@ print(pi)              # affiche la valeur de la constante pi
 ## Définition et appel de fonctions
 
 Comme vu dans l'introduction aux fonctions, il est possible de définir nos
-propres fonctions. Cela permet notamment d'éviter les répétitions et de
+propres fonctions au moyen du mot clé `def`, suivi du nom de la fonction et d'un bloc d'instructions.
+
+Définir une nouvelle fonction permet notamment d'éviter les répétitions et de
 découper un programme en plusieurs petites tâches plus faciles à résoudre. Ainsi
 le code est plus lisible et plus facile à comprendre. Pour cela, il est
 essentiel de choisir un nom de fonction qui explique ce qu'elle fait.
@@ -139,6 +141,9 @@ def nom_de_la_fonction(parametre_1, parametre_2, ...):
 nom_de_la_fonction(valeur_du_parametre_1, valeur_du_parametre_2, ...)
 ```
 
+```{important}
+Les instructions exécutées par la fonction appartiennent à un même **bloc d'instruction** et doivent avoir la même **indentation**.
+```
 ```{tip}
 Une fonction doit toujours être définie avant d'être appelée, c'est pourquoi il
 est préférable de placer toutes les définitions de fonctions au début du

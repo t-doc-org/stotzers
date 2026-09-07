@@ -1,4 +1,4 @@
-% Copyright 2024 Caroline Blank <caro@c-space.org>
+% Copyright 2026 Sylvain Stotzer <sylvain.stotzer@edufr.ch>
 % SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 # Entrées et sorties
@@ -8,7 +8,7 @@
 La fonction `print()` permet d'afficher une phrase ou la valeur d'un objet sur
 la console.
 
-## Exemple {num2}`exemple`
+### Exemple {num2}`exemple`
 
 1.  Affichage d'une chaine de caractère. Ce qui se trouve entre guillemets sera
     affiché tel quel.
@@ -59,7 +59,7 @@ la console.
 :name: py-ex-1-sol
 :linenos:
 print("Salut!")
-print("Je suis élève au collège Sainte-Croix.")
+print("Je suis élève au collège Saint-Michel.")
 print("J'ai 16 ans.")
 print("J'aime bien jouer au volley.")
 ```
@@ -132,7 +132,7 @@ print(13 - 2)
 print(13 * 2)
 print(13 / 2)
 
-# Il faut utiliser des variables.
+# Il faut utiliser des variables
 a = 13              # changer la valeur de a
 b = 2               # changer la valeur de b
 print(a + b)
@@ -176,13 +176,14 @@ print("Le reste de la division de 345 par 37 est ", 345 % 37)
 Écrivez un programme qui permet de résoudre l'exercice suivant (ne pas oublier
 les phrases d'explication):
 
-1.  Luc va faire des courses. Il achète deux livres à 9.30 CHF, un jeu vidéo à
-    59 CHF et trois mangas à 13.50 CHF. Calculer le montant total des dépenses
+1.  Luc va faire des courses. Il achète deux livres à 9.30 CHF et trois mangas à 13.50 CHF. Calculer le montant total des dépenses
     de Luc.
-2.  Juliette achète un livre, deux jeux vidéo et deux mangas. Calculer le
-    montant total des dépenses de Juliette.
-3.  En période de soldes, les jeux vidéo sont à 50 %, les livres à 5 CHF et les
-    mangas ont 6 CHF de rabais.
+2.  Aline achète toujours un livre et un manga de plus que Luc. Calculer le
+    montant total des dépenses de Aline.
+3.  En période de soldes, tous les livres sont à 50 % et tous les
+    mangas ont 6 CHF de rabais. Calculer le montant total des dépenses
+    de Luc et Aline.
+4.  Si Luc avait achetés 5 lires et 6 mangas, combien auraient dépensés Luc et Aline au prix normal et en rabais?
 
 ```{exec} python
 :editor: 7b1c5323-09e9-4e1d-9f32-f28d9d5743d4
@@ -192,7 +193,7 @@ prix_jeu =
 prix_manga =
 
 print("Montant total des achats de Luc:", ... , "francs.")
-print("Montant total des achats de Juliette:", ... , "francs.")
+print("Montant total des achats de Aline:", ... , "francs.")
 
 print("Après réduction")
 prix_livre =
@@ -200,30 +201,33 @@ prix_jeu =
 prix_manga =
 
 print("Montant total des achats de Luc avec réduction:", ... , "francs.")
-print("Montant total des achats de Juliette avec réductions:", ... , "francs.")
+print("Montant total des achats de Aline avec réductions:", ... , "francs.")
 ```
 
 ````{solution}
 ```{exec} python
 :linenos:
 prix_livre = 9.30
-prix_jeu = 59
 prix_manga = 13.50
 
+nbre_livres_Luc = 2
+nbre_manga_Luc = 3
+nbre_livres_Aline = nbre_livres_Luc + 1
+nbre_manga_Aline =  nbre_manga_Luc + 1
+
 print("Montant total des achats de Luc:",
-      2 * prix_livre + 1 * prix_jeu + 3 * prix_manga, "francs.")
-print("Montant total des achats de Juliette:",
-      1 * prix_livre + 2 * prix_jeu + 2 * prix_manga, "francs.")
+      nbre_livres_Luc * prix_livre + nbre_manga_Luc * prix_manga, "francs.")
+print("Montant total des achats de Aline:",
+      nbre_livres_Aline * prix_livre + nbre_manga_Aline * prix_manga, "francs.")
 
 print("Après réduction")
-prix_livre = 5
-prix_jeu = prix_jeu * 50 / 100
+prix_livre = prix_livre * 50 / 100
 prix_manga = prix_manga - 6
 
 print("Montant total des achats de Luc avec réductions:",
-      2 * prix_livre + 1 * prix_jeu + 3 * prix_manga, "francs.")
+      nbre_livres_Luc * prix_livre + nbre_manga_Luc * prix_manga, "francs.")
 print("Montant total des achats de Juliette avec réductions:",
-      1 * prix_livre + 2 * prix_jeu + 2 * prix_manga, "francs.")
+      nbre_livres_Aline * prix_livre + nbre_manga_Aline * prix_manga, "francs.")
 ```
 ````
 
@@ -253,18 +257,16 @@ taille = float(input("Quelle est ta taille en mètres?")) # taille est un nombre
 print(prenom, age, taille)
 ```
 
-
 ### Exercice {num2}`exercice`
 
-Écrivez un programme qui demande à l'utilisateur son nom, son prénom et où il
-habite. Le programme affichera:
+Écrivez un programme qui demande à l'utilisateur son nom, son prénom et son année de naissance. Le programme affichera:
 
 ```{code-block} text
 Quel est ton nom?
 Quel est ton prénom?
-Où habites-tu?
+En quelle année es-tu né?
 Bonjour {afficher le prénom} {afficher le nom}, heureux de faire ta connaissance.
-Je vois que tu habites à {afficher le lieu}.
+J'ai calculé ton âge, tu as {afficher l'âge } ans.
 ```
 
 ```{exec} python
@@ -277,9 +279,10 @@ Je vois que tu habites à {afficher le lieu}.
 :linenos:
 nom = input("Quel est ton nom? ")
 prenom = input("Quel est ton prénom? ")
-lieu = input("Où habites-tu? ")
+date_de_naissance = int(input("En quelle année es-tu né? "))
+age = 2026 - date_de_naissance
 print("Bonjour", prenom, nom, ", heureux de faire ta connaissance.")
-print("Je vois que tu habites à", lieu)
+print("J'ai calculé ton âge, tu as ", age, " ans.")
 ```
 ````
 
@@ -354,30 +357,65 @@ print("Fin du programme")
 
 ### Exercice {num2}`exercice`
 
-Écrivez un programme permettant de convertir des degrés Fahrenheit en degrés
-Celsius. Pour une température en Fahrenheit $F$, on trouve son équivalent en
-Celsius $C$ avec la formule :
+Le degré Fahrenheit (symbole : °F) est une unité de mesure de la température, proposée par le physicien allemand Daniel Fahrenheit en 1724. L’échelle de Fahrenheit est aujourd'hui utilisée aux États-Unis, au Bélize, aux Îles Caïman, et au Liberia.
 
-$$C = \frac{F - 32}{1.8}$$
+On peut convertir une température $f$ (exprimée en Fahrenheit) en une température $c$ (exprimée en Celsius) de la façon suivante :
+$$c = \frac{5}{9}\cdot (f - 32)$$
 
-Par exemple, si l'utilisateur entre la valeur `60.2`, alors le programme
-affichera:
+Inversement, on peut convertir une température $c$ (en Celsius) en une température $f$ (en Fahrenheit) de la façon suivante :
 
-```{code-block} text
-Température en °F: 60.2
-Merci, 60.2 °F équivalent à 15.666666666666668 °C
+$$f = c \cdot \frac{9}{5} + 32$$
+
+Le programme ci-dessous transforme une température Fahrenheit en degrés Celsius.
+
+```{exec} python
+:linenos:
+f = float(input("Entrez une température en Fahrenheit: "))
+c = 5/9 *(f-32)
+print(f, " Fahrenheit équivalent à ", c, " Celsius")  
 ```
+
+Écrivez un programme qui fait l’opération inverse pour transformer une température Celsius $c$ en degrés Fahrenheit $f$ . Vérifiez vos résultats en effectuant plusieurs conversions dans les deux sens au moyen de votre programme et du programme ci-dessus.
 
 ```{exec} python
 :editor: 2fabc445-fc9f-4275-a016-aec79668c153
 # Écrivez le programme ici
 ```
 
-````{solution}
+Question subsidiaire: pour quelle température a-t-on exactement le même nombre de degrés en Celsius et en Fahrenheit ($c=f$) ?
+
+% ````{solution}
+% ```{exec} python
+% :linenos:
+% c = float(input("Entrez une température en Celsius: "))
+% f = c*9/5 +32
+% print(c, "Celsius  équivalent à ", f, " Fahrenheit")  
+
+% fahrenheit = float(input("Température en °F: "))
+% celsius = (fahrenheit - 32) / 1.8
+% print("Merci,", fahrenheit, "°F équivaut à", celsius, "°C")
+% ```
+% ````
+
+### Exercice {num2}`exercice`
+Le programme ci-dessous demande un nombre à l’utilisateur et décompose ce nombre en minutes et secondes. Testez ce programme avec quelques (petites) valeurs différentes.
+
 ```{exec} python
-:linenos:
-fahrenheit = float(input("Température en °F: "))
-celsius = (fahrenheit - 32) / 1.8
-print("Merci,", fahrenheit, "°F équivaut à", celsius, "°C")
+:editor:
+nombre = int(input("Entrez un nombre de secondes : "))
+secondes = nombre%60 # reste de la division par 60 => nombre de secondes
+nombre = nombre//60  # division entière par 60 => minutes
+minutes = nombre     # reste de la division par 60 => nombre de minutes
+
+# affichage des résultats
+print("Minutes: ", minutes)
+print("Secondes: ", secondes)
 ```
-````
+
+Complétez ce programme afin qu’il affiche le nombre d’années, de jours, d’heures, de minutes et de secondes équivalents au nombre de secondes entré par l’utilisateur.
+
+Voici quelques valeurs de références qui vous permettront de tester votre programme: 
+- 86400 secondes = 1 jour
+- 252914704 = 8 ans + 7 jours + 6 heures + 5 minutes + 4 secondes
+- 473040000 = 15 ans
+

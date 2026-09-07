@@ -1,5 +1,5 @@
-% Copyright 2025 Caroline Blank <caro@c-space.org>
-% SPDX-License-Identifier: CC-BY-NC-SA-4.0
+% Copyright 2026 Sylvain Stotzer <sylvain.stotzer@edufr.ch>
+% SPDX-License-Identifier: CC-BY-NC-SA-4.3
 
 # Compréhension de code
 
@@ -82,7 +82,7 @@ Sans l'exécuter, qu'affiche ce programme:
 2. si `n = 5`?
 3. si `n = 9`?
 
-Ensuite, exécutez le programme pour vérifier votre réponse.
+Ensuite, exécutez le programme avec ces différentes valeurs de `n` pour vérifier vos réponses.
 
 ```{exec} python
 :editor:
@@ -99,7 +99,7 @@ while n <= 5:
    3\
    4\
    5
-2. 5
+2. 5x§
 3. /
 ```
 
@@ -111,7 +111,7 @@ Sans l'exécuter, qu'affiche ce programme si:
 2. si `n = 5`?
 3. si `n = 9`?
 
-Ensuite, exécutez le programme pour vérifier votre réponse.
+Ensuite, exécutez le programme avec ces différentes valeurs de `n` pour vérifier vos réponses.
 
 ```{exec} python
 :editor:
@@ -366,6 +366,69 @@ for i in range(4, 11):
   print(2 * i)
 ```
 ````
+
+### Exercice {nump}`exercice` : Cryptarithme 1
+
+Un cryptarithme est un casse-tête qui se présente comme une équation mathématique où les lettres représentent des chiffres à trouver. Il y a 3 règles de bases à respecter :
+-	Deux lettres différentes remplacent toujours deux chiffres différents,
+-	Deux chiffres différents sont toujours remplacés par deux lettres différentes
+-	L'écriture d'un nombre ne commence jamais par zéro.
+
+Le cryptarithme suivant :
+```{flex-table}
+{t=h}| |R|O|U|E
+{t=h}| |R|O|U|E
+{t=h}|=|=|=|=|=
+{t=h}| |V|E|L|O
+```
+possède 3 solutions : 
+
+-	2673 + 2673 = 5346  {hspace}`2em`	(R=2, O=6, U=7, E=3, V=5 et L=4)
+-	2693 + 2693 = 5386  {hspace}`2em`	(R=2, O=6, U=9, E=3, V=5 et L=8)
+-	4653 + 4653 = 9306  {hspace}`2em`	(R=4, O=6, U=5, E=3, V=9 et L=0)
+
+Le programme ci-dessous permet de résoudre le cryptarithme ROUE + ROUE = VELO par force brute. Mais il ne respecte pas exactement les règles de base et retourne des solutions qui ne sont pas valides. Corrigez ce programme afin qu'il n'affiche que les solutions valides.
+```{exec} python
+:editor: 10459e39-ee44-45c1-9d8a-2278f921e8d4
+# Résolution du Cryptarithme : ROUE + ROUE = VELO
+# 3 solutions
+nb_solution = 0
+for R in range(10) :
+    for O in range(10) :
+        for U in range(10) :
+            for E in range(10) :
+                for V in range(1,10) :
+                    for L in range(10) :
+                        ok1 = R != O and R != U and R != E and R != V and R != L
+                        ok2 = O != U and O != E and O != V and O != L
+                        ok3 = U != E and U != V and U != L
+                        ok4 = E != V and E != L
+                        ok5 = V != L
+                        if ok1 and ok2 and ok3 and ok4 and ok5 :
+                            ROUE = R * 1000 + O * 100 + U * 10 + E
+                            VELO = V * 1000 + E * 100 + L * 10 + O
+                            if ROUE + ROUE == VELO :
+                                print("ROUE + ROUE = VELO")
+                                print(ROUE,"+",ROUE,"=",VELO, "\n")
+                                nb_solution += 1
+
+print("Il y a ", nb_solution, "solutions")
+```
+
+### Exercice {nump}`exercice` : Cryptarithme 2
+
+Analysez le fonctionnement du programme de l'exercice précédent, puis adaptez-le ci-dessous afin de résoudre chacun des cryptarithmes suivants (en respectant toujours toutes les règles de base des cryptarithmes):
+- NON + NON = OUI {hspace}`6em`( 2 solutions)
+- UN+UN+NEUF=ONZE {hspace}`4.5em`	( 1 solution)
+- UN + TROIS = DEUX + DEUX {hspace}`2em`	( 10 solutions)
+
+```{exec} python
+:editor: 3d40e18b-534c-48ae-a1a3-025ad03f9452
+# Écrivez le programme ici
+```
+
+
+
 
 
 

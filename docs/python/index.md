@@ -8,16 +8,27 @@ Contenu du cours
 ```{toctree}
 introduction
 algorithme
+operateurs
 variables
 entrees-sorties
 if
 for
 while
-mini-projets
+erreurs
 comprehension
 revisions
 fonctions-intro
 fonctions
 fonctions-dessin
-test
+fonctions-exo-supp
+fonctions-lab1
+listes-decouverte
+listes-bases
+listes-in
+listes-for
+listes-lab3
 ```
+
+## Remerciements
+
+Ce cours est très largement inspiré du [cours de Caroline Blank](https://informatique.t-doc.org), que je remercie vivement.

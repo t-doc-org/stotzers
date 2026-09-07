@@ -1,4 +1,4 @@
-% Copyright 2025 Caroline Blank <caro@c-space.org>
+% Copyright 2026 Sylvain Stotzer <sylvain.stotzer@edufr.ch>
 % SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 # Fonctions - dessin
@@ -135,6 +135,7 @@ fonction `maison`.
 Ajoutez une cheminée et de la fumée.\
 Pour la fumée, créez une fonction `fumee` qui demande à l'utilisateur le nombre
 de nuages de fumée (entre 1 et 4).
+Un nuage de fumée peut être crée avec une ellipse par exemple.
 
 Vérifiez que l'utilisateur a bien donné une réponse entre 1 et 4.
 
@@ -162,9 +163,14 @@ Ajoutez une barrière en définissant une nouvelle fonction `barriere`.
     - sa longueur
     - sa couleur
 ```
+```{tab-item} Objectif
+````{image} images/fct_maison_objectif.png
+:alt: Algorithme du chien 1
+:width: 60%
+:align: center
 ````
-
-
+```
+````
 
 ```{exec} python
 :name: maison_exercice
@@ -264,7 +270,6 @@ def maison():
   rectangle(125, 220, 40, 40, "white", "black")
   rectangle(190, 220, 40, 40, "white", "black")
 
-
 # programme principal
 creation_image(600,400, "#DAF5F3")
 
@@ -274,7 +279,7 @@ cercle(530, 70, 50, "yellow")
 # gazon
 rectangle(0, 300, 600, 150, "#006400")
 maison()
-texte(140, 190, "Bienvenue", "black", 15)
+texte(120, 190, "Home sweet home", "black", 15)
 barriere(300, 250, 250, "#8B0000")
 barriere(10, 250, 80, "#8B4513")
 pommier()

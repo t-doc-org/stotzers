@@ -1,4 +1,4 @@
-% Copyright 2024 Caroline Blank <caro@c-space.org>
+% Copyright 2026 Sylvain Stotzer <sylvain.stotzer@edufr.ch>
 % SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 # Boucle while
@@ -14,6 +14,10 @@ while condition:
   instruction 1
   instruction 2
   ...
+```
+
+```{important}
+Les instructions appartenant au **bloc d'instructions** sont En Python, les instructions d'un même bloc sont reconnaissables grâce à leur indentation. Toutes les instructions d'un même bloc doivent avoir exactement la même **indentation**.
 ```
 
 ````{list-grid}

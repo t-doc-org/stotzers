@@ -45,7 +45,7 @@ En Python, il existe 4 types de données primitifs.
 | **int**   | integer   | Nombres entiers                  | 4                  |
 | **float** | flottant  | Nombres à virgules               | 4.125              |
 | **str**   | string    | Chaînes de caractères            | "Bonjour"          |
-| **bool**  | booléen   | Résultat d'un test: Vrai ou Faux | 2<1 renvoie False  |
+| **bool**  | booléen   | Résultat d'un test: Vrai (**True**) ou Faux (**False** ) | 2<1 renvoie False  |
 
 ### Exercice {num2}`exercice`
 
@@ -76,7 +76,9 @@ De quel type sont les valeurs suivantes?
 
 ## Affectation d'une variable
 
-L'affectation d'une variable se fait avec un nom de variable, suivi du signe `=`
+**L'affectation d'une variable** est l'opération qui consiste à donner une valeur à une variable.
+
+L'affectation d'une variable se fait au moyen du nom de la variable, suivi du signe `=`
 et de la valeur.
 
 ```{exec} python
@@ -121,51 +123,6 @@ nombre_de_voitures = 10
 5.  Les noms de variables ne peuvent pas contenir d'espaces. Généralement, en
     Python, on les remplace alors par le caractère de soulignement.
 ````
-
-## Opérateurs mathématiques
-
-Les opérateurs mathématiques permettent de faire des calculs simples avec les
-nombres.
-
-| Opérateur | Nom                                   | Exemple | Résultat |
-| :-------: | :-----------------------------------: | :-----: | :------: |
-| +         | Addition                              | 3 + 4   | 7        |
-| -         | Soustraction                          | 9 - 12  | -3       |
-| *         | Multiplication                        | 5 * 6   | 30       |
-| /         | Division                              | 11 / 2  | 5.5      |
-| **        | Puissance                             | 2 ** 3  | 8        |
-| //        | Division entière                      | 26 // 6 | 4        |
-| %         | Modulo (reste de la division entière) | 26 mod 6| 2        |
-
-
-### Exercice {num2}`exercice`
-
-Quel est le résultat des expressions suivantes en Python?
-
-```{role} input(quiz-input)
-:right: width: 5rem;
-:check: json trim
-```
-
-```{quiz}
-:style: max-width: 30rem;
-1.  {input}`{"3": true}`
-    {quiz-hint}`Il faut effectuer la division entière de 15 par 4.`
-    `15 // 4`
-2.  {input}`{"1": true}`
-    {quiz-hint}`% est le reste de la division entière.`
-    `16 % 5`
-3.  {input}`{"2.4": true,
-             "2,4": "En Python, il faut utiliser un point pour les nombres à
-                     virgule."}`
-    {quiz-hint}`Il faut effectuer la division.`
-    `12 / 5`
-4.  {input}`{"-2": true,
-             "2": "En Python, l'ordre de priorité est le même qu'en maths."}`
-    `4 - 3 * 2`
-5.  {input}`{"8": true}`
-    `(1 + 2) ** 2 - 1`
-```
 
 ## Exécution d'un programme
 
@@ -355,7 +312,7 @@ Au terme de l'exécution de ce programme, la variable `volume` devrait
 contenir la valeur `2849.55`
 
 ```{exec} python
-:editor: ac388a32-91a1-438e-b082-71550202565c
+:editor: 
 # Écrivez le programme ici
 
 # Affiche le volume
@@ -375,7 +332,110 @@ volume = aire_disque * hauteur
 print(volume)
 ```
 ````
+### Exercice {num2}`exercice`
+On définit deux variables : `a=10` et `b=3`. Parmi les 4 programmes suivants, lesquels permettent
+d’échanger le contenu des deux variables, de sorte qu’à la fin de l’exécution on obtienne `a: 3` et `b: 10` ?
 
+`````{tab-set}
+:sync-group: etape
+````{tab-item} Programme 1
+```{exec} python
+:linenos:
+:when:
+# Programme 1
+a = 10
+b = 3
+
+a = b
+b = a
+
+print("a: ", a)
+print("b: ", b)
+```
+````
+
+````{tab-item} Programme 2
+```{exec} python
+:linenos:
+:when:
+# Programme 2
+a = 10
+b = 3
+
+c = b
+a = b
+b = c
+
+print("a: ", a)
+print("b: ", b)
+```
+````
+
+````{tab-item} Programme 3
+```{exec} python
+:linenos:
+:when:
+# Programme 3
+a = 10
+b = 3
+
+c = a
+a = b
+b = c
+
+print("a: ", a)
+print("b: ", b)
+```
+````
+
+````{tab-item} Programme 4
+```{exec} python
+:linenos:
+:when:
+# Programme 4
+a = 10
+b = 3
+
+a = a+b
+b = a-b
+a = a-b
+
+print("a: ", a)
+print("b: ", b)
+```
+`````
+
+Vérifier vos réponse au moyen de la console ci-dessous:
+```{exec} python
+:editor: 
+# Copiez le programme ici
+```
+### Exercice {num2}`exercice`
+Les 3 programmes suivants  provoquent une erreur lors de l'exécution. Analysez ces programmes afin de retrouvez ces erreurs, puis corrigez-les (dans la mesure du possible).
+1.  ```{exec} python
+    :editor:
+    base = 5
+	hauteur = 6
+	Aire = base* hauteur
+	print(aire)
+    ```
+
+2.  ```{exec} python
+    :editor:
+    v = w+5
+	w = 10
+	print(v,w)
+    ```
+
+3.  ```{exec} python
+    :editor:
+    a = 10
+	b = 0
+	a = a**2
+	b = a/b
+	print(b)
+    ```
+	
 ## Opérateurs d'affectation
 
 Les opérateurs d'affectation combinée permettent de modifier la valeur des
@@ -414,7 +474,6 @@ valeur `1000`
 # Écrivez le programme ici
 ```
 
-
 ````{solution}
 ```{exec} python
 :linenos:
@@ -432,27 +491,22 @@ print(x)
 ### Exercice {num2}`exercice`
 
 Lisez attentivement le programme ci-dessous et expliquez, en français, ce qu'il
-fait. À quoi correspondent les variables `h1`, `h2`, et `total`.
+fait. À quoi correspondent les variables `h_n`, `h_s`, et `total`?
 
 ```{exec} python
 :linenos:
-CHF_par_h1 = 32.5
-CHF_par_h2 = 40
-heure_debut = 20
-temps_de_travail = 8.5
-h1 = (heure_debut + temps_de_travail)
-h2 = temps_de_travail - h1
-total = h1 * CHF_par_h1 + h2 * CHF_par_h2
+CHF_par_h_n = 30
+CHF_par_h_s = 40
+temps_de_travail = 10
+h_s = temps_de_travail % 8
+h_n = temps_de_travail - h_s
+total = (h_n * CHF_par_h_n) + (h_s * CHF_par_h_s)
+print(total)
 ```
 
 ```{solution}
 :class: note dropdown
 Ce programme permet de calculer et stocker le salaire d'un employé dans la
-variable `total`. De toute évidence, cet employé travail de nuit comme il a
-commencé à 20h et a travaillé durant 8 heures et demie. La variable `h1`
-contient le nombre d'heures passées après minuit (en effet, le reste de la
-division entière de 28.5 par 24 nous donne 4.5, et l'employé a bien fini de
-travailler à 4 heure et demie). Ainsi, en soustrayant `h1` aux nombres d'heures
-travaillées au total, `h2` contient le nombre d'heures travaillées avant minuit.
-Ces deux variables permettent de calculer le salaire total avec les taux corrects.
+variable `total`. Les 8 premières heures (`h_n`) sont payées au tarif normal ( `CHF_par_h_n` ), 
+et les heures supplémentaires (`h_s`) sont payés au tarif des heures supplémentaires ( `CHF_par_h_s` ).
 ```

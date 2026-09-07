@@ -1,4 +1,4 @@
-% Copyright 2024 Caroline Blank <caro@c-space.org>
+% Copyright 2026 Sylvain Stotzer <sylvain.stotzer@edufr.ch>
 % SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 # Instructions conditionnelles
@@ -8,39 +8,11 @@ Une instruction conditionnelle est composée d'une **condition** puis d'un
 évaluée par `True` ou `False`. Le bloc d'instructions s'exécute seulement si la
 condition est vérifiée.
 
-## Opérateurs de comparaison
+```{important}
+Un **bloc d'instructions** est un groupe d'instructions qui doivent être exécutées ensemble.
+En Python, les instructions d'un même bloc sont reconnaissables grâce à leur indentation. Toutes les instructions d'un même bloc doivent avoir exactement la même indentation.
 
-Les opérateurs de comparaison permettent de comparer deux valeurs entre elles.
-Le résultat de la comparaison est de type booléen: True ou False.
-
-| Opérateur | Nom                  | Exemple | Résultat |
-| :-------: | :------------------: | :-----: | :------: |
-| ==        | égal à               | 3 == 7  | False    |
-| !=        | différent de         | 3 != 7  | True     |
-| >         | plus grand que       | 3 > 7   | False    |
-| <         | plus petit que       | 3 < 7   | True     |
-| >=        | plus grand ou égal à | 3 >= 7  | False    |
-| <=        | plus petit ou égal à | 3 <= 7  | True     |
-
-### Exercice {num2}`exercice`
-
-Est-ce que les expressions suivantes sont `True` (vrai) ou `False` (faux)?
-
-```{role} select(quiz-select)
-:right:
-:options: |
-: True
-: False
-```
-
-```{quiz}
-:style: max-width: 25rem;
-1.  {select}`True`  `1 + 1 == 2`
-2.  {select}`False` `2 * 3 == 3`
-3.  {select}`True`  `2 + 3 != 4`
-4.  {select}`False` `14 >= 15`
-5.  {select}`False` `2 ** 3 == 6`
-6.  {select}`True`  `13 >= 13`
+L'**indentation** consiste à décaler une instruction vers la droite, généralement avec 4 espaces (ou une tabulation).
 ```
 
 ## Exemple {num2}`exemple` (if)
@@ -59,7 +31,7 @@ print("Début")
 meteo = "soleil"
 print("Je mets ma veste.")
 if meteo == "pluie":
-  print("Je prends un parapluie.")
+    print("Je prends un parapluie.")
 print("Je pars.")
 print("Fin")
 ```
@@ -84,9 +56,9 @@ moyenne = 5
 print("La moyenne est de", moyenne)
 
 if moyenne >= 4:
-  print("Moyenne suffisante")
+    print("Moyenne suffisante")
 else:
-  print("Moyenne insuffisante")
+    print("Moyenne insuffisante")
 
 print("Pour réussir, il faut travailler!")
 ```
@@ -112,13 +84,13 @@ type_film = "comédie"
 print("Le type de film est", type_film)
 
 if type_film == "action":
-  print("Explosions et des cascades de folie!")
+    print("Explosions et des cascades de folie!")
 elif type_film == "comédie":
-  print("Mort de rire!")
+    print("Mort de rire!")
 elif type_film == "horreur":
-  print("Terrifiant!")
+    print("Terrifiant!")
 else:
-  print("Je ne connais pas.")
+    print("Je ne connais pas.")
 
 print("Bonne séance de cinéma!")
 ```
@@ -285,18 +257,18 @@ else:
 
 ### Exercice {num2}`exercice`
 
-Indiquez l'ordre d'exécution et ce que vont afficher les programmes suivants?
+Indiquez l'ordre d'exécution (N° de ligne) et ce qui va être affiché par chacun des programmes suivants.
 
 1.  ```{exec} python
     :when:
     :linenos:
     a = 2
     if a != 2:
-      print("Rouge")
+        print("Rouge")
     elif a < 2:
-      print("Bleu")
+        print("Bleu")
     else:
-      print("Jaune")
+        print("Jaune")
     ```
 
     ````{solution}
@@ -306,11 +278,11 @@ Indiquez l'ordre d'exécution et ce que vont afficher les programmes suivants?
     :linenos:
     a = 2
     if a != 2:
-      print("Rouge")
+        print("Rouge")
     elif a < 2:
-      print("Bleu")
+        print("Bleu")
     else:
-      print("Jaune")
+        print("Jaune")
     ```
     ````
 
@@ -319,11 +291,11 @@ Indiquez l'ordre d'exécution et ce que vont afficher les programmes suivants?
     :linenos:
     y = 2
     if y <= -1:
-      y = 3 * y + 5
+        y = 3 * y + 5
     elif y <= 3:
-      y += 4
+        y += 4
     else:
-      y = y * y - 1
+        y = y * y - 1
     print(y)
     ```
 
@@ -334,11 +306,11 @@ Indiquez l'ordre d'exécution et ce que vont afficher les programmes suivants?
     :linenos:
     y = 2
     if y <= -1:
-      y = 3 * y + 5
+        y = 3 * y + 5
     elif y <= 3:
-      y += 4
+        y += 4
     else:
-      y = y * y - 1
+        y = y * y - 1
     print(y)
     ```
     ````
@@ -363,11 +335,11 @@ else age >= 65:
 ```{exec} python
 age = int(input("Quel âge as-tu? "))
 if age < 18:
-  print("Tu payes le tarif enfant.")
+    print("Tu payes le tarif enfant.")
 elif age < 65:
-  print("Tu payes le tarif adulte.")
+    print("Tu payes le tarif adulte.")
 else:
-  print("Tu payes le tarif retraité.")
+    print("Tu payes le tarif retraité.")
 ```
 ````
 
@@ -389,7 +361,7 @@ else:
 nombre = float(input("Choisissez un nombre"))
 nombre = nombre - 5.5
 if nombre < 0:
-  nombre += 10
+    nombre += 10
 print(nombre)
 ```
 ````
@@ -507,65 +479,39 @@ print ("Pour une personne de", age, "ans, le prix à payer est de", prix, "franc
 ```
 ````
 
-## Opérateurs logiques
+### Exercice {num2}`exercice`
+Ecrivez un programme qui demande à l’utilisateur le nombre de bouteilles qu’il achète et lui indique en retour le rabais auquel il a droit, comme indiqué à la figure ci-dessous.
 
-Les opérateurs logiques permettent de combiner plusieurs conditions simples
+```{image} images/rabais_progressif.png
+:alt: Rabais progressif
+:width: 80%
+:align: center
+```
 
-| Opérateur | Description          |
-| :-------: | :------------------: |
-| and       | retourne True si les deux conditions sont vraies |
-| or        | retourne True si une des conditions est vraie    |
-| not       | inverse le résultat, renvoie True si le résultat est faux et vice-versa |
+```{exec} python
+:editor:  a7451ba3-2bd7-46f5-a2c6-1ab83c16c960
+# Écrivez le programme
+```
+Pour valider votre programme, il est important de tester tous les cas de figure et les cas particuliers.
 
-### Exemple {num2}`exemple`
-
-`(5 < 3) and (2 < 6)` retourne `False`, car `5 < 3` retourne `False`.
-
-`(5 < 3) or (2 < 6)` retourne `True`, car `2 < 6` retourne `True`.
-
-`(2 < 3) and (2 < 6)` retourne `True`, car `2 < 3` retourne `True` et `2 < 6`
-retourne `True`.
-
-`(2 > 3) or (2 > 6)` retourne `False`, car `2 > 3` retourne `False` et `2 > 6`
-retourne `False`.
-
-`not (4 == 4)` retourne `False`, car `4 == 4` retourne `True`.
-
-`not (3 == 4)` retourne `True`, car `3 == 4` retourne `False`.
-
-% ### Exercice {num2}`exercice`
-%
-% Une salle de trampoline pratique les tarifs suivants pour deux personnes:
-%
-% - Si les deux personnes sont mineures, elles payent chacune 7 francs.
-% - Si une seule est mineure, elles payent un tarif de groupe de 18 francs.
-% - Si les deux personnes sont majeures, elles payent au total 25 francs.
-%
-% Écrivez un programme qui demande l'âge des deux personnes et affiche le prix à
-% payer.
-%
-% ```{exec} python
-% :editor: b7334fbc-4c1d-42fe-bed2-d15582abd972
-% age_1 = int(input("Quel est l'âge de la première personne? "))
-% age_2 = int(input("Quel est l'âge de la deuxième personne? "))
-%
-% # Complétez le programme ici
-% ```
-%
-% ````{solution}
-% ```{exec} python
-% age_1 = int(input("Quel est l'âge de la première personne? "))
-% age_2 = int(input("Quel est l'âge de la deuxième personne? "))
-%
-% if age_1 < 18 and age_2 < 18:
-%   prix = 2 * 7
-% elif age_1 < 18 or age_2 < 18:
-%   prix = 18
-% else:
-%   prix = 25
-% print("Le prix total à payer est de", prix, "francs.")
-% ```
-% ````
+%````{solution}
+%```{exec} python
+%# calcule le rabais en fonctions du nombre de bouteilles achetées
+%nombreDeBouteilles = int(input("Combien de bouteilles achetez-vous? "))
+%rabais = 0
+%if nombreDeBouteilles > 120:
+%   rabais = 25
+%elif nombreDeBouteilles > 60:
+%    rabais = 20
+%elif nombreDeBouteilles > 30:
+%    rabais = 15
+%elif nombreDeBouteilles > 12:
+%    rabais = 10
+%else:
+%    rabais = 0
+%print("Avec ", nombreDeBouteilles, " bouteilles, vous avez droit à un rabais de ", rabais, " %")
+%```
+%````
 
 ### Exercice {num2}`exercice`
 
@@ -687,8 +633,8 @@ else:
 
 ### Exercice {num2}`exercice`
 
-Écrivez un programme qui permet de résoudre des équations du deuxième degré. Ce
-programme doit afficher le nombre de solutions et les calculer.
+Écrivez un programme qui permet de résoudre des équations du deuxième degré de la forme $ax^2+bx+c=0$. Ce
+programme doit tout d'abord demander à l'utilisateur les valeurs $a$, $b$ et $c$, puis indiquer le nombre de solutions, les calculer et les afficher.
 
 ```{exec} python
 :editor: 71c23a46-21ab-4874-a8be-1928ea37c625
@@ -700,10 +646,12 @@ programme doit afficher le nombre de solutions et les calculer.
 from math import sqrt
 
 # Demande à l'utilisateur les valeurs des coefficients a, b et c
-a = float(input("Coefficient de x^2: "))
-b = float(input("Coefficient de x: "))
-c = float(input("Coefficient sans partie littérale: "))
+print("Résolution d'équation du 2e degré")
+a = float(input("Entrer le coefficient de x^2: "))
+b = float(input("Entrer le coefficient de x: "))
+c = float(input("Entrer la partie littérale: "))
 
+print("Je vais résoudre l'équation ", a, "x^2+", b, "x+",c, "=0 ")
 if a == 0:
   print("Ce n'est pas une équation du deuxième degré.")
   print("La solution de l'équation est", -c / b)
