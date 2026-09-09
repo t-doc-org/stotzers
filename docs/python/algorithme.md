@@ -1,3 +1,4 @@
+% Copyright 2024 Caroline Blank <caro@c-space.org>
 % Copyright 2026 Sylvain Stotzer <sylvain.stotzer@edufr.ch>
 % SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
@@ -39,12 +40,12 @@ Il existe différents exemples d'algorithmes:
 :style: grid-template-columns: 1fr 1fr;
 - ```{image} images/laver_les_dents.jpg
 	:alt: Algorithme pour le brossage des dents
-	:width: 60%
+	:width: 70%
 	:align: center
 	```
 - ```{image} images/itineraire.png
 	:alt: Itinéraire routier
-	:width: 100%
+	:width: 130%
 	:align: center
 	```
 ````
@@ -156,4 +157,4 @@ différentes étapes à suivre :
 
  ### Exercice {nump}`exercice`
  
- Appliquez différentes mécaniques de base de l'algorithmique et de la programmation dans le jeu [little-dot]( https://little-dot.toxicode.fr/)?
+ Mettez en pratique différents mécanismes de base d'algorithmique et dans le jeu [little-dot]( https://little-dot.toxicode.fr/). Arriverez-vous à terminer tous les niveaux?
