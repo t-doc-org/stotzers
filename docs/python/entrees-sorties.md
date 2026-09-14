@@ -184,7 +184,7 @@ les phrases d'explication):
 3.  En période de soldes, tous les livres sont à 50 % et tous les
     mangas ont 6 CHF de rabais. Calculer le montant total des dépenses
     de Luc et Aline.
-4.  Si Luc avait achetés 5 lires et 6 mangas, combien auraient dépensés Luc et Aline au prix normal et en rabais?
+4.  Si Luc avait achetés 5 livres et 6 mangas, combien auraient dépensés Luc et Aline au prix normal et en rabais?
 
 ```{exec} python
 :editor: 7b1c5323-09e9-4e1d-9f32-f28d9d5743d4
@@ -196,7 +196,7 @@ prix_manga =
 print("Montant total des achats de Luc:", ... , "francs.")
 print("Montant total des achats de Aline:", ... , "francs.")
 
-print("Après réduction")
+print("Après réduction: ")
 prix_livre =
 prix_jeu =
 prix_manga =
@@ -211,17 +211,18 @@ print("Montant total des achats de Aline avec réductions:", ... , "francs.")
 prix_livre = 9.30
 prix_manga = 13.50
 
-nbre_livres_Luc = 2
-nbre_manga_Luc = 3
+nbre_livres_Luc = 2	# changer ici le nombre de livres achetés par Luc
+nbre_manga_Luc = 3	# changer ici le nombre de mangas achetés par Luc
 nbre_livres_Aline = nbre_livres_Luc + 1
 nbre_manga_Aline =  nbre_manga_Luc + 1
 
+print("Scénario où Luc achète ", nbre_livres_Luc , "livres et", nbre_manga_Luc , "mangas:")
 print("Montant total des achats de Luc:",
       nbre_livres_Luc * prix_livre + nbre_manga_Luc * prix_manga, "francs.")
 print("Montant total des achats de Aline:",
       nbre_livres_Aline * prix_livre + nbre_manga_Aline * prix_manga, "francs.")
 
-print("Après réduction")
+print("Après réduction: ")
 prix_livre = prix_livre * 50 / 100
 prix_manga = prix_manga - 6
 
