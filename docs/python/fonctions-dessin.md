@@ -151,7 +151,6 @@ Ajoutez un pommier en définissant une nouvelle fonction `pommier`.
 
 Ajoutez 5 pommes sur l'arbre qui apparaissent de manière aléatoire sur le
 pommier à chaque exécution.
-
 ```
 ```{tab-item} Étape 7
 :sync: etape7
@@ -163,12 +162,11 @@ Ajoutez une barrière en définissant une nouvelle fonction `barriere`.
     - sa longueur
     - sa couleur
 ```
-```{tab-item} Objectif
-````{image} images/fct_maison_objectif.png
+````{tab-item} Objectif
+```{image} images/fct_maison_objectif.png
 :alt: Algorithme du chien 1
 :width: 60%
 :align: center
-````
 ```
 ````
 
