@@ -187,10 +187,9 @@ les phrases d'explication):
 4.  Si Luc avait achetés 5 livres et 6 mangas, combien auraient dépensés Luc et Aline au prix normal et en rabais?
 
 ```{exec} python
-:editor: 7b1c5323-09e9-4e1d-9f32-f28d9d5743d4
+:editor: 7b1c5423-09e9-4e1d-9f32-f28d9d5743d4
 # Complétez le programme
 prix_livre =
-prix_jeu =
 prix_manga =
 
 print("Montant total des achats de Luc:", ... , "francs.")
@@ -198,7 +197,6 @@ print("Montant total des achats de Aline:", ... , "francs.")
 
 print("Après réduction: ")
 prix_livre =
-prix_jeu =
 prix_manga =
 
 print("Montant total des achats de Luc avec réduction:", ... , "francs.")

@@ -495,24 +495,24 @@ Ecrivez un programme qui demande à l’utilisateur le nombre de bouteilles qu�
 ```
 Pour valider votre programme, il est important de tester tous les cas de figure et les cas particuliers.
 
-%````{solution}
-%```{exec} python
-%# calcule le rabais en fonctions du nombre de bouteilles achetées
-%nombreDeBouteilles = int(input("Combien de bouteilles achetez-vous? "))
-%rabais = 0
-%if nombreDeBouteilles > 120:
-%   rabais = 25
-%elif nombreDeBouteilles > 60:
-%    rabais = 20
-%elif nombreDeBouteilles > 30:
-%    rabais = 15
-%elif nombreDeBouteilles > 12:
-%    rabais = 10
-%else:
-%    rabais = 0
-%print("Avec ", nombreDeBouteilles, " bouteilles, vous avez droit à un rabais de ", rabais, " %")
-%```
-%````
+````{solution}
+```{exec} python
+# calcule le rabais en fonctions du nombre de bouteilles achetées
+nombreDeBouteilles = int(input("Combien de bouteilles achetez-vous? "))
+rabais = 0
+if nombreDeBouteilles > 120:
+   rabais = 25
+elif nombreDeBouteilles > 60:
+    rabais = 20
+elif nombreDeBouteilles > 30:
+    rabais = 15
+elif nombreDeBouteilles > 12:
+    rabais = 10
+else:
+    rabais = 0
+print("Avec ", nombreDeBouteilles, " bouteilles, vous avez droit à un rabais de ", rabais, " %")
+```
+````
 
 ### Exercice {num2}`exercice`
 

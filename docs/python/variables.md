@@ -91,6 +91,13 @@ moyenne = 5.2             # La variable moyenne est de type float
 promu = True              # La variable promu est de type bool
 ```
 
+```{attention}
+Il ne faut pas confondre les opérateurs `==` et `=`:
+
+- `==` est une comparaison entre 2 valeurs. Il peut être compris comme une question: est-ce que la valeur à gauche de l'opérateur `==` est égale celle qui est à droite?
+- `=` est l'affectation d'une variable: la variable qui se trouve à gauche de l'opérateur `=` prendra la valeur qui se trouve à droite.
+```
+
 ### Exercice {num2}`exercice`
 
 Ce programme Python déclare 5 variables, mais contient une erreur par ligne.
@@ -440,7 +447,7 @@ Les 3 programmes suivants  provoquent une erreur lors de l'exécution. Analysez 
 ## Opérateurs d'affectation
 
 Les opérateurs d'affectation combinée permettent de modifier la valeur des
-variables avec une notation simplifiée. Il existe pour tous les opérateurs
+variables avec une notation simplifiée. Il en existe pour tous les opérateurs
 mathématiques, voici les principaux.
 
 | Opérateur | Exemple | Équivalent à |
