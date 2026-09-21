@@ -72,7 +72,7 @@ def nord_ouest():
 ```{exec} python
 :after: py-chess py-deplacements
 :then: py-roi-1-check
-:editor: 9c8a69d8-8540-4864-901c-395277902e53
+:editor: 
 :when: load click
 nord()
 est()
@@ -112,7 +112,7 @@ minimum de coups.
 ```{exec} python
 :after: py-chess py-deplacements
 :then: py-tour-1-check
-:editor: 5352b74a-be0a-46e9-966c-e61ed25c766c
+:editor: 
 :when: load click
 # Écrivez le programme ici
 ```
@@ -150,7 +150,7 @@ d'instructions (nord() suivi de est()), mais il n'est pas possible d'utiliser
 une boucle `for`, car il y a d'autres instructions entre.
 La solution est de définir une nouvelle fonction `diagonale()`.
 
-Résolvez l'exercice précédent en appelant la fonction `diagonale` à la place de
+Résolvez l'exercice précédent en appelant la fonction `diagonale()` à la place de
 répéter du programme.
 
 De cette manière le programme est plus lisible!

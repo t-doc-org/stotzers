@@ -5,10 +5,12 @@
 
 ## Exercice {nump}`exercice`
 
-1. Écrivez une fonction qui convertit des bits en octets.
-2. Écrivez une fonction qui convertit des octets en bits.
-3. Convertissez 3664000 bits en octets.
-4. Convertissez 512 octets en bits.
+1. Écrivez une fonction qui convertit des bits en octets. \
+(cette fonction doit recevoir un nombre de bits en paramètres et retourner un nombre d'octets)
+2. Écrivez une fonction qui convertit des octets en bits. \
+(cette fonction doit recevoir un nombre d'octets en paramètres et retourner un nombre de bits)
+3. Appelez votre 1ère fonction afin de convertir 3664000 bits en octets.
+4. Appelez votre 2e fonction afin de convertir 512 octets en bits.
 
 ```{tip}
 Un octet contient 8 bits.

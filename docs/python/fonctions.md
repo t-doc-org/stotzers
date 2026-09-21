@@ -9,7 +9,7 @@
 En programmation, une **fonction** est un bloc de code (suite d'instructions)
 permettant de réaliser une tâche donnée et auquel nous donnons un nom.
 
-Nous en avons déjà rencontrées plusieurs:
+Nous avons déjà rencontrées plusieurs fonctions dans les chapitres précédents:
 
 - print(...): affiche sur la console ce qui est indiqué entre parenthèse
   ```{exec} python

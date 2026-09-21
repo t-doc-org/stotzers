@@ -22,19 +22,21 @@ une variable est définie par un **nom**. Mais pour l'ordinateur, il
 s'agit d'une adresse (emplacement de la mémoire où est stockée cette donnée).
 
 ```{attention}
-Règles à respecter:
+Règles à respecter pour le nom des variables:
+- Le nom d'une variable ne peut contenir que les caractères alphanumériques
+  (A-z 0-9 et \_)
+- Le nom d'une variable doit commencer par une lettre ou le caractère de
+  soulignement.
+- Le nom d'une variable ne doit pas contenir d'espace.
 
-- Le nom de la variable doit correspondre à son contenu.\
-  Exemple: age, hauteur
+Conseils:
+- Le nom de la variable doit faire du sens et correspondre à son contenu.\
+  Exemples: age, hauteur, rayon
 - Le caractère \_ permet de séparer les mots dans un nom de variable.\
   Exemple: cote_carre
 - Le nom d'une variable ne doit pas contenir de caractère accentué.
-- Le nom d'une variable doit commencer par une lettre ou le caractère de
-  soulignement.
-- Le nom d'une variable ne peut contenir que les caractères alphanumériques
-  (A-z 0-9 et \_)
-- Les majuscules et les minuscules font une différence.
-  Exemple: mon\_age, mon\_Age, mon\_AGE sont trois variables différentes
+- Faites attention aux minuscules et majuscules, car Python fait la distinction.\
+  Exemple: `mon_age`, `mon_Age`, `Mon_Age` et `mon_AGE` correspondent à quatre variables différentes.
 ```
 
 ## Types de données
@@ -94,8 +96,8 @@ promu = True              # La variable promu est de type bool
 ```{attention}
 Il ne faut pas confondre les opérateurs `==` et `=`:
 
-- `==` est une comparaison entre 2 valeurs. Il peut être compris comme une question: est-ce que la valeur à gauche de l'opérateur `==` est égale celle qui est à droite?
-- `=` est l'affectation d'une variable: la variable qui se trouve à gauche de l'opérateur `=` prendra la valeur qui se trouve à droite.
+- `==` est une **comparaison entre 2 valeurs**. C'est en fait une question: est-ce que la valeur de l'expression qui se trouve à gauche de l'opérateur `==` est égale celle qui se trouve à droite? Le résultat sera donc `True` ou `False`
+- `=` est l'**affectation d'une variable**: la variable qui se trouve à gauche de l'opérateur `=` prendra la valeur de l'expression qui se trouve à droite.
 ```
 
 ### Exercice {num2}`exercice`
@@ -164,6 +166,11 @@ permettent de connaître à chaque ligne, la valeur des variables.
   | 4 | 10| 30| 40| 400|
   | 5 | 20| 30| 40| 400|
 ````
+
+### Remarque
+Il est possible (et même fortement recommandé!) d'ajouter des **commentaires** dans un programme Python, afin de fournir des explications supplémentaires et de documenter le code. \
+Pour écrire un commentaire, il suffit d'écrir le symbole `#` et d'écrire ensuite le commentaire: tout ce qui suit le `#` jusqu'à la fin de la ligne est ignoré par l'interpréteur Python.\
+Les commentaires sont habituellement affichés avec une couleur particulière dans les éditeurs Python.
 
 ### Exercice {num2}`exercice`
 
