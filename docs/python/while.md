@@ -18,7 +18,7 @@ while condition:
 ```
 
 ```{important}
-Les instructions appartenant au **bloc d'instructions** sont En Python, les instructions d'un même bloc sont reconnaissables grâce à leur indentation. Toutes les instructions d'un même bloc doivent avoir exactement la même **indentation**.
+En Python, les instructions appartenant à un même **bloc d'instructions** sont reconnaissables car elles ont toutes exactement la même **indentation**.
 ```
 
 ````{list-grid}

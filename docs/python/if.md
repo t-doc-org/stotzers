@@ -11,7 +11,7 @@ condition est vérifiée.
 
 ```{important}
 Un **bloc d'instructions** est un groupe d'instructions qui doivent être exécutées ensemble.
-En Python, les instructions d'un même bloc sont reconnaissables grâce à leur indentation. Toutes les instructions d'un même bloc doivent avoir exactement la même indentation.
+En Python, les instructions d'un même bloc sont reconnaissables car elles ont toutes exactement la même **indentation**.
 
 L'**indentation** consiste à décaler une instruction vers la droite, généralement avec 4 espaces (ou une tabulation).
 ```

@@ -18,7 +18,7 @@ for _ in range(nb_repetitions):
 ```
 
 ```{important}
-Les instructions appartenant au **bloc d'instructions** sont En Python, les instructions d'un même bloc sont reconnaissables grâce à leur indentation. Toutes les instructions d'un même bloc doivent avoir exactement la même **indentation**.
+En Python, les instructions appartenant à un même **bloc d'instructions** sont reconnaissables car elles ont toutes exactement la même **indentation**.
 ```
 
 ### Exemple {num2}`exemple`
@@ -142,15 +142,15 @@ l'ensemble des nombres entiers de $0$ à $n$ non compris $\{0; 1; 2; ...; n-1\}$
 Il est donc possible d'utiliser la valeur de cette variable dans la boucle.
 
 ```{important}
-Dans `for _ in range(nb_repetitions):`, le `_` représente une variable que nous
-pouvons appeler comme nous le souhaitons (en respectant les règles de nommage
-des variables.)
+Dans l'instruction `for _ in range(nb_repetitions):`, le `_` représente une variable à laquelle nous n'avons pas donné de nom. Mais il est possible de donner un nom (en respectant les règles de nommage des variables) si nous avons besoin d'utiliser cette variable dans le bloc d'instructions.
 
-Toutes ces notations sont correctes: `for _ in range(3):`,
-`for nombre in range(3):`, `for i in range(3):`.
+Toutes ces notations sont correctes: 
+-`for _ in range(3):`
+-`for nombre in range(3):`
+-`for i in range(3):`
 
-`for _ in range(3):` est utilisée seulement lorsque nous n'utilisons pas la
-valeur de la variable dans la boucle.
+La syntaxe `for _ in range(3):` est utilisée seulement lorsque nous n'utilisons pas la
+valeur de la variable dans la boucle (on dit que c'est une **variable muette**)
 ```
 
 ### Exemple {num2}`exemple`

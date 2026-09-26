@@ -506,22 +506,30 @@ print(x)
 ### Exercice {num2}`exercice`
 
 Lisez attentivement le programme ci-dessous et expliquez, en français, ce qu'il
-fait. À quoi correspondent les variables `h_n`, `h_s`, et `total`?
+fait. À quoi correspondent les variables `total1`, `total2`, et `total3`? que contiennent-elles? comment pourrait-on les renommer afin de faciliter la lecture et la compréhension du programme?
 
 ```{exec} python
 :linenos:
-CHF_par_h_n = 30
-CHF_par_h_s = 40
-temps_de_travail = 10
-h_s = temps_de_travail % 8
-h_n = temps_de_travail - h_s
-total = (h_n * CHF_par_h_n) + (h_s * CHF_par_h_s)
+prix_cahier = 4.50
+nombre_cahiers = 6
+prix_stylo = 2.20
+nombre_stylos = 4
+rabais = 0.05 # correspond à 5%
+
+total_cahiers = prix_cahier * nombre_cahiers
+total_stylos = prix_stylo * nombre_stylos
+total1 = nombre_cahiers + nombre_stylos
+total2 = total_cahiers + total_stylos
+total3 = total - rabais * tota2
 print(total)
 ```
 
 ```{solution}
 :class: note dropdown
-Ce programme permet de calculer et stocker le salaire d'un employé dans la
-variable `total`. Les 8 premières heures (`h_n`) sont payées au tarif normal ( `CHF_par_h_n` ), 
-et les heures supplémentaires (`h_s`) sont payés au tarif des heures supplémentaires ( `CHF_par_h_s` ).
+`total1` : nombre d'articles vendus. On pourrait renommer cette variable `nombre_d_articles`
+
+`total2`: prix total pour tous les articles vendus, sans prendre en compte le rabais. On pourrait renommer cette variable `prix_avant_rabais`
+
+`total3` : prix total auquel on a appliqué le rabais. On pourrait renommer cette variable `prix_final`
+
 ```
