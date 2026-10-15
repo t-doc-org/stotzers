@@ -44,7 +44,7 @@ Quel est le résultat des expressions suivantes en Python?
     `18 % 5`
 4.  {input}`{"1": true}`
     {quiz-hint}`% est le reste de la division entière.`
-    `17'245 % 2`
+    `17245 % 2`
 ```
 
 ## Opérateurs de comparaison

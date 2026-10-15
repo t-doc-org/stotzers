@@ -15,19 +15,20 @@ entrees-sorties
 if
 for
 while
+exercices-boucles
 erreurs
 comprehension
 revisions
 fonctions-intro
 fonctions
 fonctions-dessin
-fonctions-exo-supp
 fonctions-lab1
 listes-decouverte
 listes-bases
 listes-in
 listes-for
 listes-lab3
+string
 ```
 
 ## Remerciements

@@ -9,11 +9,11 @@ plusieurs valeurs (de types différents).
 ```{code-block} text
 matieres = ["français", "informatique", "allemand"]
 notes = [5.7, 4.3, 5.1]
-eleves = ["2F4", "Économie et droit", 5.0, 2007]
+eleve = ["Jean", "Valjean", "2A4", "BIC", 5.0, 2007]
 ```
 
 La liste `matieres` ne contient que des éléments de type `str`. La liste `notes`
-ne contient que des éléments de type `float`. Mais la liste `eleves` contient
+ne contient que des éléments de type `float`. Mais la liste `eleve` contient
 des éléments de types différents `str`, `float` et `int`.
 
 ## Création d'une liste
@@ -27,10 +27,10 @@ le tout encadré par des crochets.
 :editor:
 matieres = ["français", "informatique", "allemand"]
 notes = [5.7, 4.3, 5.1]
-eleves = ["2F4", "Économie et droit", 5.0, 2007]
+eleve = ["Jean", "Valjean", "2A4", "BIC", 5.0, 2007]
 print(matieres)
 print(notes)
-print(eleves)
+print(eleve)
 ```
 
 ```{tip}
@@ -70,7 +70,7 @@ liste_vide = []
 ```{exec} python
 :linenos:
 # Créations des listes
-salles = ["P207", "G107", "P214", "P-107"]
+salles = ["5.1.5", "4.2.3", "2.1.12", "3.4.1"]
 annees_naissance = [1941, 1966, 1974, 1975, 1978, 2006]
 tailles = [1.8, 1.9, 1.96]
 
@@ -571,10 +571,10 @@ hasard entre 1 et 10.
 2. Déterminez le nombre d'occurences de chaque nombre.
 
 ```{tip}
-Dans le module `random`, la fonction `randint(a, b)` permet de généré des
-nombres entiers aléatroires entre a (compris) et b (compris).
+Dans le module `random`, la fonction `randint(a, b)` permet de générer des
+nombres entiers aléatoires entre `a` et `b` ( le nombre aléatoire `x` sera généré de sorte que `a <= x <= b` ).
 
-Ne pas oublier l'import: `from random import randint`
+Ne pas oublier l'import en début de progamme: `from random import randint`
 ```
 
 ```{exec} python
@@ -598,7 +598,7 @@ for i in range(1, 11):
 ```
 ````
 
-## Différence variable simple et variable de type liste
+## Différence entre variable simple et variable de type liste
 
 ### Exemple {num2}`exemple`
 
@@ -646,7 +646,8 @@ b = a
 print("a:", a, "b:", b)
 a[1] = 9
 print("a:", a, "b:", b)
-b.append(7)
+a.append(4)
+b.append(5)
 print("a:", a, "b:", b)
 ```
 
@@ -668,3 +669,18 @@ En modifiant le deuxième élément de la variable `a` avec `a[1] = 9`, la varia
 `b` est aussi modifiée, car c'est la même liste qui est référencée.
 
 De même `b.append(7)` modifie aussi la variable `a` (elle ajoute un élément).
+
+```{important}
+Si on veut avoir une nouvelle copie d'une liste il ne faut donc pas faire une simple affectation, mais utiliser la fonction `copy()` :
+
+```{exec} python
+:editor:
+a = [1, 2, 3]
+b = a.copy() # une nouvelle copie de la liste est crée
+print("a:", a, "b:", b)
+a[1] = 9
+print("a:", a, "b:", b)
+a.append(4)
+b.append(5)
+print("a:", a, "b:", b)
+```

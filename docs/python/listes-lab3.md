@@ -16,7 +16,7 @@ création d'un compte et l'identification sur un site ou une application.
 Complétez le programme ci-dessous:
 
 1.  demandez à l'utilisateur de choisir un nom d'utilisateur et un mot de passe.
-2.  créez un fonction `utilisateur_existe(utilisateur)` qui retourne `True` si
+2.  créez une fonction `utilisateur_existe(utilisateur)` qui retourne `True` si
     l'utilisateur passé en paramètre existe dans la liste `utilisateurs`.
 3.  si le nom d'utilisateur n'existe pas encore, ajoutez le nom d'utilisateur
     dans la liste `utilisateurs` et le mot de passe dans celle `mots_de_passe`.

@@ -401,7 +401,7 @@ Question subsidiaire: pour quelle température a-t-on exactement le même nombre
 Le programme ci-dessous demande un nombre à l’utilisateur et décompose ce nombre en minutes et secondes. Testez ce programme avec quelques (petites) valeurs différentes.
 
 ```{exec} python
-:editor:
+:editor: 2fabc445-fc9f-4275-a016-aec79668c154
 nombre = int(input("Entrez un nombre de secondes : "))
 secondes = nombre%60 # reste de la division par 60 => nombre de secondes
 nombre = nombre//60  # division entière par 60 => minutes

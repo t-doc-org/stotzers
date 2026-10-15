@@ -1,7 +1,7 @@
 % Copyright 2024 Caroline Blank <caro@c-space.org>
 % SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-# Listes - Élément appartenant à une liste
+# Listes - Éléments d'une liste
 
 Il est possible de savoir si un élément appartient à une liste en utilisant
 l'expression suivante `element in liste` qui revoie `True` si `element` est dans

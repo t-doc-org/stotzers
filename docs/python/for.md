@@ -41,50 +41,6 @@ En Python, les instructions appartenant à un même **bloc d'instructions** sont
 
 ### Exercice {num2}`exercice`
 
-Sans les exécuter, qu'afficheront les programmes suivants?
-
-Ensuite, testez vos réponses en les exécutant.
-
-{.lower-alpha-paren}
-1.  ```{exec} python
-    :linenos:
-    print("Lancer d'une pièce.")
-    for _ in range(5):
-      print("Pile")
-    print("Fin du jeu")
-    ```
-
-2.  ```{exec} python
-    :linenos:
-    print("Lancer d'une pièce.")
-    for _ in range(3):
-      print("Pile")
-      print("Face")
-    print("Fin du jeu")
-    ```
-
-3.  ```{exec} python
-    :linenos:
-    print("Lancer d'une pièce.")
-    for _ in range(2):
-      print("Pile")
-      print("Face")
-      print("Pile")
-    print("Fin du jeu")
-    ```
-
-4.  ```{exec} python
-    :linenos:
-    print("Lancer d'une pièce.")
-    for _ in range(2):
-      print("Pile")
-      print("Face")
-      print("Pile")
-      print("Fin du jeu")
-    ```
-
-### Exercice {num2}`exercice`
-
 `````{tab-set}
 :sync-group: etape
 ````{tab-item} Étape 1
@@ -145,9 +101,10 @@ Il est donc possible d'utiliser la valeur de cette variable dans la boucle.
 Dans l'instruction `for _ in range(nb_repetitions):`, le `_` représente une variable à laquelle nous n'avons pas donné de nom. Mais il est possible de donner un nom (en respectant les règles de nommage des variables) si nous avons besoin d'utiliser cette variable dans le bloc d'instructions.
 
 Toutes ces notations sont correctes: 
--`for _ in range(3):`
--`for nombre in range(3):`
--`for i in range(3):`
+
+- `for _ in range(3):`
+- `for nombre in range(3):`
+- `for i in range(3):`
 
 La syntaxe `for _ in range(3):` est utilisée seulement lorsque nous n'utilisons pas la
 valeur de la variable dans la boucle (on dit que c'est une **variable muette**)
@@ -184,7 +141,7 @@ print("J'ai fini de compter!")
 
 ### Exercice {num2}`exercice`
 
-Modifiez le programme de l'exemple pour qu'il affiche les nombres entiers de 1 à
+Modifiez le programme ci-dessous pour qu'il affiche les nombres entiers de 1 à
 10.
 
 ```{exec} python
@@ -283,6 +240,237 @@ print(produit)
 ```
 ````
 
+## L'instruction range()
+L’instruction `for … in` permet de parcourir tous les éléments d’une suite d’éléments définie avec la fonction `range()`. Cette fonction `range()` peut prendre 1, 2 ou 3 paramètres 
+
+- `range(n)`: parcourt tous les éléments de `0` à `n-1`
+  - Exemple: `range(5)` parcourra tous les éléments de la liste [0, 1, 2, 3, 4]
+
+- `range(a, n)`: parcourt tous les éléments de `a` à `n-1`
+  - Exemple: `range(36,40)` parcourra tous les éléments de la liste [36, 37, 38, 39]
+
+- `range(a, n ,p)` parcourt tous les éléments de `a` à `n-1` avec un pas de `p`. 
+
+  - Exemple: `range(10,18,2)` parcourra tous les éléments de la liste [10, 12, 14, 16]
+  - Exemple: `range(10,0,-2)` parcourra tous les éléments de la liste [10, 8, 6, 4, 2]
+
+Remarques: 
+  - `a`, `n` et `p` doivent être des nombres entiers (integer)
+  - Si la valeur de début est plus grande que la valeur de fin, alors le pas `p` doit être positif.
+  - Si la valeur de début est plus petite que la valeur de fin, alors le pas `p` doit être négatif.
+
+
+### Exemple {num2}`exemple`
+Modifiez les paramètres `a`, `n` et `p` dans l'exemple ci-dessous afin de voir quelles sont les valeurs qui seront parcourures par la variable `i` dans la boucle `for()`
+  ```{exec} python
+  :editor:
+  # Modifiez les paramètres `a`, `n` et `p` ci-dessous
+  a = 1	    # valeur de début
+  n = 10    # valeur de fin
+  p = 2	    # pas
+  
+  print("range(", a ,",", n ,",", p ,"): ")
+  for i in range(a, n ,p):
+    print(i)
+  ```
+
+### Exercice {num2}`exercice`
+
+Cochez la bonne réponse.
+
+```{defaults} quiz-check
+:randomize:
+:class: grid-4
+```
+
+{.lower-alpha-paren}
+1.  Qu'affiche le progamme suivant?
+
+    ```{exec} python
+    :name: prog6.1
+    :when:
+    :linenos:
+    for i in range(3):
+      print("Hello")
+    ```
+    `````{quiz}
+    ````{quiz-check}
+    - :
+      ```{exec} python
+      :after: prog6.1
+      :when: load
+      :class: hidden
+      ```
+    - ```{exec} python
+      :when: load
+      :class: hidden
+      for i in range(3):
+        print(i)
+      ```
+    - ```{exec} python
+      :when: load
+      :class: hidden
+      for i in range(2):
+        print("Hello")
+      ```
+    - ```{exec} python
+      :when: load
+      :class: hidden
+      for i in range(4):
+        print("Hello")
+      ```
+    ````
+	`````
+2.  Qu'affiche le progamme suivant?
+
+    ```{exec} python
+    :name: prog6.2
+    :when:
+    :linenos:
+    for i in range(4):
+      print(i)
+    ```
+    `````{quiz}
+    ````{quiz-check}
+    - :
+      ```{exec} python
+      :after: prog6.2
+      :when: load
+      :class: hidden
+      ```
+    - ```{exec} python
+      :when: load
+      :class: hidden
+      for i in range(4):
+        print(i+1)
+      ```
+    - ```{exec} python
+      :when: load
+      :class: hidden
+      for i in range(5):
+        print(i)
+      ```
+    - ```{exec} python
+      :when: load
+      :class: hidden
+      for i in range(4):
+        print("4")
+      ```
+    ````
+    `````
+3.  Qu'affiche le progamme suivant?
+
+    ```{exec} python
+    :name: prog6.3
+    :when:
+    :linenos:
+    for i in range(2):
+      print("i")
+    ```
+    `````{quiz}
+    ````{quiz-check}
+    - :
+      ```{exec} python
+      :after: prog6.3
+      :when: load
+      :class: hidden
+      ```
+    - ```{exec} python
+      :when: load
+      :class: hidden
+      for i in range(2):
+        print(i)
+      ```
+    - ```{exec} python
+      :when: load
+      :class: hidden
+      for i in range(3):
+        print(i)
+      ```
+    - ```{exec} python
+      :when: load
+      :class: hidden
+      for i in range(1):
+        print(i)
+      ```
+    ````
+    `````
+4.  Qu'affiche le progamme suivant?
+
+    ```{exec} python
+    :name: prog6.4
+    :when:
+    :linenos:
+    for i in range(3, 7):
+      print(i+1)
+    ```
+    `````{quiz}
+    ````{quiz-check}
+    - :
+      ```{exec} python
+      :after: prog6.4
+      :when: load
+      :class: hidden
+      ```
+    - ```{exec} python
+      :when: load
+      :class: hidden
+      for i in range(2, 6):
+        print(i+1)
+      ```
+    - ```{exec} python
+      :when: load
+      :class: hidden
+      for i in range(3, 7):
+        print(i+1)
+      ```
+    - ```{exec} python
+      :when: load
+      :class: hidden
+      print(3)
+	  print(7)
+      ```
+    ````
+    `````
+5.  Qu'affiche le progamme suivant?
+
+    ```{exec} python
+    :name: prog6.5
+    :when:
+    :linenos:
+    for i in range(5,20,3):
+      print(i)
+    ```
+    `````{quiz}
+    ````{quiz-check}
+    - :
+      ```{exec} python
+      :after: prog6.5
+      :when: load
+      :class: hidden
+      ```
+    - ```{exec} python
+      :when: load
+      :class: hidden
+      for i in range(5,21,3):
+        print(i)
+      ```
+    - ```{exec} python
+      :when: load
+      :class: hidden
+      for i in range(3,21,5):
+        print(i)
+      ```
+    - ```{exec} python
+      :when: load
+      :class: hidden
+      print(5)
+      print(20)
+      print(3)
+      ```
+    ````
+    `````
+	
 ### Exercice {num2}`exercice`
 
 Écrivez un programme qui demande à l'utilisateur un nombre entier positif et
@@ -307,6 +495,13 @@ nombre = int(input("Choisissez un nombre: "))
 for i in range(1, 11):
   print(nombre * i)
 ```
+
+```{exec} python
+:linenos:
+nombre = int(input("Choisissez un nombre: "))
+for i in range(nombre, 10*nombre, nombre+1):
+  print(i)
+```
 ````
 
 ### Exercice {num2}`exercice`
@@ -321,13 +516,14 @@ for i in range(1, 11):
 ````{solution}
 ```{exec} python
 :linenos:
-for i in range(20):
-  if (i + 1) % 2 == 0:
-    print(i + 1)
+# parcourt tous les nombres de 2 à 20 en faisant à chaque fois un pas de 2
+for i in range(2, 21, 2):
+  print(i)
 ```
 
 ```{exec} python
 :linenos:
+# parcourt tous les nombres de 1 à 20 et n'affiche que les nombres pairs
 for i in range(1, 21):
   if i % 2 == 0:
     print(i)
@@ -392,207 +588,37 @@ explicitement:
     ```
     ````
 
+
 ### Exercice {num2}`exercice`
 
-Bob souhaite construire une pyramide à base carrée comme sur la photo.
+Ecrivez un programme qui permette de dessiner un sapin comme sur le modèle ci-dessous.
 
-```{figure} images/pyramide.png
+```{figure} images/sapin.png
 :alt: Pyramide
 :width: 200px
 :align: center
 ```
-{.lower-alpha-paren}
-1.  Écrivez un programme qui permet de calculer le nombre de billes nécessaires
-    pour construire la pyramide de l'image (elle a 7 étages). Utilisez une
-    boucle `for`.
-
-    ```{exec} python
-    :editor: e71a7353-1236-4047-8c5b-2dcd42017bfa
-    # Écrivez le programme ici
-    ```
-
-    ````{solution}
-    ```{exec} python
-    :linenos:
-    nb_billes = 0
-    for i in range(7):
-      nb_billes += (i + 1) ** 2
-    print(nb_billes)
-    ```
-
-    ```{exec} python
-    :linenos:
-    nb_billes = 0
-    for etage in range(1, 8):
-      nb_billes += etage ** 2
-    print(nb_billes)
-    ```
-    ````
-
-2.  Modifiez le programme précédent pour calculer le nombre de billes
-    nécessaires pour construire une pyramide à 100 étages.
-
-    ```{exec} python
-    :editor: 277cfc59-fcf8-4667-a845-01585976347c
-    # Écrivez le programme ici
-    ```
-
-    ````{solution}
-    ```{exec} python
-    :linenos:
-    nb_billes = 0
-    for i in range(100):
-      nb_billes += (i + 1) ** 2
-    print(nb_billes)
-    ```
-
-    ```{exec} python
-    :linenos:
-    nb_billes = 0
-    for etage in range(1, 101):
-      nb_billes += etage ** 2
-    print(nb_billes)
-    ```
-    ````
-
-3.  Modifiez le programme pour que l'utilisateur puisse choisir le nombre
-    d'étages.
-
-    ```{exec} python
-    :editor: 6c6da905-b3ad-4971-9ac0-705facf2a1e9
-    # Écrivez le programme ici
-    ```
-
-    ````{solution}
-    ```{exec} python
-    :linenos:
-    nb_etages = int(input("Choisissez le nombre d'étages: "))
-    nb_billes = 0
-    for i in range(nb_etages):
-      nb_billes += (i + 1) ** 2
-    print(nb_billes)
-    ```
-
-    ```{exec} python
-    :linenos:
-    nb_etages = int(input("Choisissez le nombre d'étages: "))
-    nb_billes = 0
-    for etage in range(1, nb_etages + 1):
-      nb_billes += etage ** 2
-    print(nb_billes)
-    ```
-    ````
-
-### Exercice {num2}`exercice`
-
-Le 1{sup}`er` janvier, les parents de Chrystel ont déposé sur son livret
-d'épargne 15 000 CHF au taux de 0.5 %.
-
-1.  Écrivez un programme pour calculer le montant qu'elle aura après 1 an.
-
-    ```{exec} python
-    :editor: b0e0d36f-ab70-423e-bcaa-ed4c8007fad2
-    # Écrivez le programme ici
-    ```
-
-    ````{solution}
-    ```{exec} python
-    :linenos:
-    montant = 15000
-    montant += 0.5 / 100 * montant
-    print(montant)
-    ```
-
-    ```{exec} python
-    :linenos:
-    montant = 15000
-    montant = 100.5 / 100 * montant
-    print(montant)
-    ```
-    ````
-
-2.  Modifiez le programme précédent pour calculer le montant qu'elle aura dans
-    10 ans. Utilisez une boucle `for`.
-
-    ```{exec} python
-    :editor: eb41dc15-477c-406c-80c9-9ec9a810f924
-    # Écrivez le programme ici
-    ```
-
-    ````{solution}
-    ```{exec} python
-    :linenos:
-    montant = 15000
-    for _ in range(10):
-      montant += 0.5 / 100 * montant
-    print(montant)
-    ```
-
-    ```{exec} python
-    :linenos:
-    montant = 15000
-    for _ in range(10):
-      montant = 100.5 / 100 * montant
-    print(montant)
-    ```
-    ````
-
-3.  Modifiez le programme pour que l'utilisateur puisse choisir la durée (le
-    nombre d'années) et la montant initial.
-
-    ```{exec} python
-    :editor: 5fcdfd6a-df26-4601-841b-a827f878979f
-    # Écrivez le programme ici
-    ```
-
-    ````{solution}
-    ```{exec} python
-    :linenos:
-    montant = float(input("Montant déposé: "))
-    duree = int(input("Durée du placement: "))
-    for _ in range(duree):
-      montant += 0.5 / 100 * montant
-    print(montant)
-    ```
-
-    ```{exec} python
-    :linenos:
-    montant = float(input("Montant déposé: "))
-    duree = int(input("Durée du placement: "))
-    for _ in range(duree):
-      montant = 100.5 / 100 * montant
-    print(montant)
-    ```
-    ````
-
-4.  Modifiez le programme pour que l'utilisateur puisse aussi choisir le taux
-    d'intérêt (en %).
-
-    ```{exec} python
-    :editor: 700fa29d-9736-4692-82b2-44ffce6c6d18
-    # Écrivez le programme ici
-    ```
-
-    ````{solution}
-    ```{exec} python
-    :linenos:
-    montant = float(input("Montant déposé: "))
-    duree = int(input("Durée du placement: "))
-    taux = float(input("Taux d'intérêt en %: "))
-    for _ in range(duree):
-      montant += taux / 100 * montant
-    print(montant)
-    ```
-
-    ```{exec} python
-    :linenos:
-    montant = float(input("Montant déposé: "))
-    duree = int(input("Durée du placement: "))
-    taux = float(input("Taux d'intérêt en %: "))
-    for _ in range(duree):
-      montant = (taux + 100) / 100 * montant
-    print(montant)
-    ```
-    ````
+- Pour ceci, le programme doit demander à l'utilisateur la hauteur du sapin (c'est-à-dire le nombre de lignes de 'O'). Le dessin ci-dessus est a une hauteur de 7. 
+- Dessinez à la main un petit sapin afin de déterminer le nombre d'espaces et le nombre de 'O' à dessiner pour chacune des lignes
+- créez une boucle qui pour à chaque passage dessinera une ligne du dessin: un certain nombre d'espaces suivi d'un certain nombre de 'O'
+- Pour équilibrer le tout, il faut dessiner un tronc: la hauteur du tronc correspond au tiers de la hauteur du sapin (utiliser pour ceci la division entière)
 
 
+```{exec} python
+:editor: 6c6da005-b3ad-4971-9ac0-705facf2a1e9
+# Écrivez le programme ici
+```
+
+````{tip}
+Par défaut, la fonction `print()` ajoute automatiquement un retour à la ligne comme dernier caractère.
+Pour ne pas avoir de retour à la ligne, il est possible de redéfinir (et de le remplacer par un caractère vide) en ajoutant `end=""` comme dernier argument:  
+```{exec} python
+:linenos:
+print("a")
+print("b")
+print("c")
+print("d", end="")
+print("e", end="")
+print("f")
+```
+````

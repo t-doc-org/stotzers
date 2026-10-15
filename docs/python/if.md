@@ -195,12 +195,12 @@ else:
   print("a est ...")
 ```
 
-Tester la justesse de votre code avec différentes valeurs de a.
+Tester votre code avec différentes valeurs de `a`.
 
 ````{solution}
 ```{exec} python
 :editor:
-a = ...                                 # choisir la valeur de a
+a = 10                                 # choisir la valeur de a
 if a > 5:
   print("a est plus grand que 5.")
 elif a == 5:                           # a == 5 pour la comparaison

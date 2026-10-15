@@ -1,7 +1,7 @@
 % Copyright 2024 Caroline Blank <caro@c-space.org>
 % SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-# Listes - Boucles `for`
+# Listes - Boucles for
 
 La boucle `for` permet d'accéder à tous les éléments d'une liste l'un après
 l'autre.
@@ -56,7 +56,7 @@ Avant de les exécuter, déterminez ce que font les programmes suivants.
       reponses.append(reponse)
 
     print("Tes réponses: ", reponses)
-    if reponses[2] == "STX":
+    if reponses[2] == "CSM" or reponses[2] == "Saint-Michel" or reponses[2] == "St-Michel" :
       print("Tu es dans la meilleure école ;-)")
     ```
 

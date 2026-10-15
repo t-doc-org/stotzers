@@ -520,15 +520,15 @@ total_cahiers = prix_cahier * nombre_cahiers
 total_stylos = prix_stylo * nombre_stylos
 total1 = nombre_cahiers + nombre_stylos
 total2 = total_cahiers + total_stylos
-total3 = total - rabais * tota2
-print(total)
+total3 = total2 - rabais * total2
+print(total3)
 ```
 
 ```{solution}
 :class: note dropdown
 `total1` : nombre d'articles vendus. On pourrait renommer cette variable `nombre_d_articles`
 
-`total2`: prix total pour tous les articles vendus, sans prendre en compte le rabais. On pourrait renommer cette variable `prix_avant_rabais`
+`total2` : prix total pour tous les articles vendus, sans prendre en compte le rabais. On pourrait renommer cette variable `prix_avant_rabais`
 
 `total3` : prix total auquel on a appliqué le rabais. On pourrait renommer cette variable `prix_final`
 

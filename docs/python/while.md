@@ -61,8 +61,8 @@ définir un compteur qui va "compter" le nombre de répétitions.
 ````
 
 ```{important}
-Il ne faut pas oublier d'incrémenter (augmenter) le compteur à chaque passage
-dans la boucle, sinon la condition sera toujours vraie et la boucle ne
+Si on utilise un compteur dans la condition du while, il ne faut pas oublier d'incrémenter (augmenter) ce compteur à chaque passage
+dans la boucle, sinon la condition sera toujours vraie et la boucle ne 
 s'arrêtera jamais (boucle infinie). Cela fait "planter" le programme.
 ```
 
@@ -186,54 +186,6 @@ while i <= 5:
 ```
 ````
 
-### Exercice {num2}`exercice:py1-boom`
-
-Nous souhaitons créer un programme qui compte le temps avant qu'une bombe
-explose. Pour cela, un compte à rebours commencera à 10 et ira jusqu'à 1, puis
-le programme affichera "BOOM".
-
-Écrivez un programme qui correspond à l'algorithme suivant:
-
-```{code-block} text
-Initialiser une variable compte_a_rebours à 10
-Tant que compte_a_rebours est plus grand que 0
-    Afficher la valeur de compte_a_rebours
-    Retirer 1 à compte_a_rebours
-Afficher "BOOM"
-```
-
-Ce programme doit alors afficher:
-
-```{code-block} text
-10
-9
-8
-7
-6
-5
-4
-3
-2
-1
-BOOM
-```
-
-```{exec} python
-:editor: fffa34af-43d1-40f0-ae0a-30c18ac2e5a0
-# Écrivez le programme ici
-```
-
-````{solution}
-```{exec} python
-:linenos:
-compte_a_rebours = 10
-while compte_a_rebours > 0:
-  print(compte_a_rebours)
-  compte_a_rebours -= 1
-print("BOOM")
-```
-````
-
 ### Exercice {num2}`exercice`
 
 Complétez le programme pour qu'il demande à l'utilisateur la capitale de la
@@ -266,7 +218,7 @@ print("Bravo!")
 ```{exec} python
 :linenos:
 capitale = input("Quelle est la capitale de la Suisse?")
-
+	
 while capitale != "Berne":
   capitale = input("Faux, essaie encore!")
 print("Bravo!")
@@ -353,147 +305,65 @@ while x < y:
 ```
 
 ### Exercice {num2}`exercice`
-
-Écrivez un programme dans lequel l'utilisateur peut consécutivement entrer les
-notes qu'il a faites dans une branche. À la fin, le programme affichera le
-nombre de notes insuffisantes qui ont été entrées. Les notes invalides seront
-simplement ignorées. Pour terminer le programme, l'utilisateur entrera la note
-`99`.
-
-Exemple d'exécution:
-
-```{code-block} text
-Entrez une note: 4.5
-Entrez une note: 3.4
-Entrez une note: 6
-Entrez une note: 3.9
-Entrez une note: 5.1
-Entrez une note: 99
-Vous avez fait 2 notes insuffisantes
-```
-
+Implémentez l'algorithme d'Euclide qui permet de déterminer le PGDC de 2 nombres donnés par l'utilisateur.
+L'algorithme d'Euclide est décrit par un ordinogramme au début du chapitre [Algorithme](./algorithme.md).
 ```{exec} python
-:editor: 931d1c5b-562f-4541-b9f9-9507cb6e4ed1
+:editor: 7ff640be-fd71-493b-bb0c-f7c495af9ac3
 # Écrivez le programme ici
 ```
 
 ````{solution}
 ```{exec} python
 :linenos:
-nb_notes_insuf = 0
-note = float(input("Entrez une note: "))
-while note != 99:
-  if note >= 1 and note < 4:
-    nb_notes_insuf += 1
-  note = float(input("Entrez une note: "))
-print("Vous avez fait", nb_notes_insuf, "notes insuffisantes")
+# Implémentation de l'algorithme d'Euclide pour déterminer le PGDC
+a = int(input("Entrez un 1er nombre entier: "))
+b = int(input("Entrez un 2e nombre entier: "))
+
+r = a%b
+while r!=0:
+   a = b
+   b = r
+   r = a%b
+print("Le PGDC est", b)
 ```
 ````
 
 ### Exercice {num2}`exercice`
 
-Reprenez l'{numref}`exercice %s<exercice:py1-boom>` et modifiez-le pour qu'à
-partir de 3, il affiche également "Fuyez!".
+Vous achetez un scooter à 3'500 CHF avec un crédit dont le taux annuel est de 9%.
+Vous pouvez rembourser 100 CHF par mois (intérêts compris).
 
-```{code-block} text
-10
-9
-...
-4
-3 Fuyez!
-2 Fuyez!
-1 Fuyez!
-BOOM
-```
-
-```{exec} python
-:editor: 7ff640be-fd71-493b-bb0c-f7c495af9ac2
-# Écrivez le programme ici
-```
-
-````{solution}
-```{exec} python
-:linenos:
-compte_a_rebours = 10
-while compte_a_rebours > 0:
-  if compte_a_rebours <= 3:
-    print(compte_a_rebours, "Fuyez!")
-  else:
-    print(compte_a_rebours)
-  compte_a_rebours -= 1
-print("BOOM")
-```
-````
-
-### Exercice {num2}`exercice`
-
-Vous empruntez 2'500 CHF à 7.9 % sous la forme d'un crédit à la consommation pour
-vous offrir un scooter.
+- Combien de mensualités sont nécessaires pour rembourser la totalité du montant?
+- Quel sera le montant total que vous aurez alors payé?
 
 ````{tab-set}
 :sync-group: etape
 ```{tab-item} Étape 1
 :sync: etape1
-Calculez le montant d'intérêt à payer si vous remboursez l'entier de cette somme
-dans 40 mois.
+Afin de faciliter la lecture du programme, définissez une variable pour chacun des paramètres de cet exercice: prix, dette, taux d'intérêt, nombre de mensualités ...
 ```
 
 ```{tab-item} Étape 2
-:sync: etape2
-Calculez le montant total à payer.
+:sync: etape1
+Calculez également le taux d'intérêt mensuel puisque la simulation va se faire mois par mois et qu'il faudra donc recalculer les intérêts mois par mois.
+Le taux d'intérêt mensuel correspond au douzième du taux d'intérêt annuel.
 ```
 
 ```{tab-item} Étape 3
+:sync: etape2
+Créez une boucle qui s'exécutera tant que la dette ne sera pas totalement remboursée.
+```
+
+```{tab-item} Étape 4
 :sync: etape3
-Modifiez le code pour que l'utilisateur puisse choisir le montant à emprunter et
-la durée du crédit en mois et qu'il soit possible de changer le taux d'intérêt
-facilement.
+Chaque passage dans la boucle correspond à un mois. Il faut donc mettre à jour les différentes variables à chaque passage dans la boucle.
+```
+
+```{tab-item} Étape 5
+:sync: etape3
+Faites quelques autres simulations de remboursement en changeant les paramètres de votre programme (durée, prix...)
 ```
 ````
-
-```{exec} python
-:editor: ef2f4021-ec53-4db3-9679-39209bbcf6c1
-# Écrivez le programme ici
-```
-
-````{solution}
-Étape 1:
-
-```{exec} python
-:linenos:
-dette = 1500
-interets = dette * 7.9 / 100 * 40 / 12
-print(interets)
-```
-
-Étape 2:
-
-```{exec} python
-:linenos:
-dette = 1500
-montant_total = dette + dette * 7.9 / 100 * 40 / 12
-print(montant_total)
-```
-
-Étape 3:
-
-```{exec} python
-:linenos:
-taux = 7.9 / 100
-dette = float(input("Quel montant voulez-vous emprunter?"))
-duree = float(input("Quelle est la durée de l'emprunt?"))
-montant_total = dette + dette * taux * duree / 12
-print(montant_total)
-```
-````
-
-### Exercice {num2}`exercice`
-
-Vous achetez une voiture à 15'000 CHF avec un crédit dont le taux est de 10.5%.
-Vous pouvez rembourser 550 CHF par mois (intérêts compris).
-
-Combien de mensualités sont nécessaires pour rembourser la totalité du montant?
-
 ```{exec} python
 :editor: dca83242-8a76-44d3-8dee-46815635908a
 # Écrivez le programme ici
@@ -502,19 +372,25 @@ Combien de mensualités sont nécessaires pour rembourser la totalité du montan
 ````{solution}
 ```{exec} python
 :linenos:
-dette = 15000
-taux = 10.5 / 100
-remboursement = 550
+dette = 3500
+tauxAnnuel = 9 / 100
+tauxMensuel = tauxAnnuel / 12
+remboursement = 100
+montantRembourse = 0
 nb_mensualites = 0
 while dette > 0:
-  dette += dette * taux * 1 / 12
+  dette += dette * tauxMensuel
   nb_mensualites += 1
   if dette >= remboursement:
     dette -= remboursement
-    print("Après", nb_mensualites, "mois, la dette est de", dette, "CHF.")
+    montantRembourse += remboursement
+    print("Dette après", nb_mensualites, "mois: ", dette, "CHF.")
   else:
     print("Le dernier versement sera de", dette, "CHF.")
+    montantRembourse += dette
     dette = 0
+
 print("Nombre de mensualités nécessaires pour rembourser la dette:", nb_mensualites)
+print("Montant payé au total: ", montantRembourse)
 ```
 ````

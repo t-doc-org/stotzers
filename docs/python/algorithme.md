@@ -15,16 +15,22 @@ Un bon algorithme doit notamment être :
 - ordonné : les étapes sont exécutées dans un certain ordre ;
 - fini : il doit arriver à un résultat après un nombre fini d'étapes.
 
+```{youtube} iQpsPVVppZM
+:title: Vidéo: Qu'est-ce qu'un algorithme
+```
+
 Le mot *algorithme* provient de la forme latine (*Algorismus*) du nom du
 mathématicien persan Al Khwarizmi qui a vécu au IXe siècle. Mais les premiers
 algorithmes remontent aux Babyloniens (-3000 avant JC), avec notamment
 l'algorithme d'Euclide qui permet de déterminer le plus grand diviseur commun de
 deux nombres entiers.
 
-```{youtube} iQpsPVVppZM
-:title: Vidéo: Qu'est-ce qu'un algorithme
+### Ordinogramme de l'algorithme d'Euclide 
+```{image} images/algo_euclide.png
+:alt: Algorithme d'Euclide
+:width: 60%
+:align: center
 ```
-
 
 ## Exemples
 

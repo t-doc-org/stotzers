@@ -2,7 +2,7 @@
 % Copyright 2024 Caroline Blank <caro@c-space.org>
 % SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-# Listes - Découverte
+# Listes - Introduction
 
 ## Exercice {nump}`exercice`
 
@@ -19,13 +19,14 @@ demandées à l'utilisateur.
 :linenos:
 # Définition des variables
 somme_notes = 0
+nb_notes = 5
 
 # Demande des notes à l'utilisateur
-for _ in range(5):
+for _ in range(nb_notes):
   somme_notes += float(input("Note: "))
 
 # Calcule de la moyenne
-moyenne = somme_notes / 5
+moyenne = somme_notes / nb_notes
 
 # Affiche la moyenne
 print(moyenne)
@@ -124,9 +125,10 @@ saisir.
 :linenos:
 # Définition des variables
 notes = []
+nb_notes = 10
 
 # Demande des notes à l'utiliateur
-for _ in range(10):
+for _ in range(nb_notes):
   notes.append(float(input("Note: ")))
 
 # Afficher la liste de notes
@@ -266,7 +268,8 @@ print("Moyenne: ", moyenne)
 
 Pour améliorer le programme, créez une fonction `calcule_moyenne(notes)` qui:
 - prend en paramètre la liste des notes,
-- calcule la moyenne et la renvoie.
+- parcours toute la liste des notes afin d'en faire la somme, puis calcule la moyenne 
+- renvoie la moyenne.
 
 ````{tip}
 La fonction `len(liste)` retourne le nombre d'éléments de la liste.

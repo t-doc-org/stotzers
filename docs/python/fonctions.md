@@ -57,13 +57,23 @@ Avant de pouvoir utiliser une fonction d'un module, il faut l'importer ainsi:
 from nom_du_module import nom_de_la_fonction
 ```
 
+On peut également directement importer toutes les fonctions d'un module en utilisant le joker:
+
+```{exec} python
+:when:
+from nom_du_module import *
+```
+```{tip}
+Toutes les importations se font au début du programme. De cette manière, on sait tout de suite quels sont les modules utilisés dans celui-ci.
+```
+
 ### Exemple {num2}`exemple`
 
 ```{exec} python
 :editor:
 # import des modules
-from math import sqrt, pi
-from random import randint
+from math import sqrt, pi		# import de la fonction sqrt et de la constante pi du module math
+from random import randint		# import de la fonction randint du module random
 
 n = randint(1, 20)     # choisit un nombre aléatoire entre 1 et 20
 print(n)
@@ -71,6 +81,19 @@ print(sqrt(40))        # calcule et affiche la racine carrée de 40
 print(pi)              # affiche la valeur de la constante pi
 ```
 
+### Exemple {num2}`exemple`
+
+```{exec} python
+:editor:
+# import des modules avec le jocker
+from math import *		# import de toutes les fonctions du module math
+from random import *	# import de toutes les fonctions du module random
+
+n = randint(1, 20)     # choisit un nombre aléatoire entre 1 et 20
+print(n)
+print(sqrt(40))        # calcule et affiche la racine carrée de 40
+print(pi)              # affiche la valeur de la constante pi
+```
 
 ## Définition et appel de fonctions
 
@@ -145,12 +168,19 @@ nom_de_la_fonction(valeur_du_parametre_1, valeur_du_parametre_2, ...)
 ```{important}
 Les instructions exécutées par la fonction appartiennent à un même **bloc d'instruction** et doivent avoir la même **indentation**.
 ```
+
+```{important}
+L'ordre des paramètres lors de l'appel de la fonction doit être le même que lors
+de la définition de la fonction.
+```
+
 ```{tip}
 Une fonction doit toujours être définie avant d'être appelée, c'est pourquoi il
 est préférable de placer toutes les définitions de fonctions au début du
 programme juste après les imports.
 ```
 
+## Exercices
 ### Exercice {num2}`exercice`
 
 1. Définissez une fonction `calcule_et_affiche_perimetre_carre()`.
@@ -251,6 +281,7 @@ S'il y a une erreur, expliquez et corrigez le problème.
       print(prix)
 
     calcule_et_affiche_pourcentage(15, 52)
+	```
 
 6.  Calculez l'aire d'un carré de côté 9.
 
@@ -372,34 +403,408 @@ mystery_2(y - 10)
 print(y)
 ```
 
+## Fonctions avec valeur de retour
+
+La commande `return` sert à terminer l’exécution de la fonction et à transmettre un (ou plusieurs) résultat(s). Cette commande `return` n'est pas obligatoire à la fin de la fonction si il n'y a aucune valeur à retourner, mais il est recommandé de la mettre pour plus de clarté.
+
+### Exemple {num2}`exemple:py-aire_du_cercle`
+
+```{exec} python
+:editor:
+from math import pi
+ 
+# calcul l'aire d'un cercle
+def aire_cercle(rayon):
+    aire=pi*rayon**2
+    return aire
+
+print("aire d'un cercle de rayon 1: ", aire_cercle(1))
+print("aire d'un cercle de rayon 3: ", aire_cercle(3))
+print("aire d'un cercle de rayon 10: ", aire_cercle(10))
+```
+
+
+### Exemple {num2}`exemple:py-delta2`
+
+```{exec} python
+:editor:
+# définition des fonctions
+def discriminant(a, b, c):
+  return(b ** 2 - 4 * a * c)
+
+# programme principal
+
+# affiche le nombre de solution
+delta = discriminant(1, 2, 1)
+if delta > 0:
+  print("L'équation a deux solutions.")
+elif delta == 0:
+  print("L'équation a une solution.")
+else:
+  print("L'équation n'a pas de solution.")
+```
+Améliorations possibles de l'exemple:
+
+1.  Demandez les valeurs des coefficients `a`, `b` et `c` à l'utilisateur.
+2.  Affichez les solutions quand elles existent.
+
+
+```{role} aff(quiz-input)
+:right: width: 8rem;
+:check: lowercase trim
+```
+````{important}
+`return` interrompt la fonction. Tout ce qui se trouve dans la fonction, mais
+après le `return` sera ignoré.
+
+```{exec} python
+:linenos:
+def double(x):
+  return 2*x
+  print("Ce texte ne s'affichera pas.")
+
+print(double(5))
+print("Fin du programme")
+```
+````
+
+## Exercices
+### Exercice {num2}`exercice`
+Les cinq programmes ci-dessous sont similaires, mais les résultats sont à chaque fois différentse ressemblent. déterminez ce que va afficher chaque programme,
+prédisez **ce qui s'affiche à l'écran**, puis vérifiez en réfléchissant à ce que fait vraiment
+chaque appel de fonction. Si le programme n'affiche rien, écrivez `rien`.
+
+```````{quiz}
+1.  {aff}`5`
+    ```{code-block} python
+    def double(nombre):
+        return nombre
+	    nombre * 2
+
+    print(double(5))
+    ```
+
+2.  {aff}`rien`
+    ```{code-block} python
+    def double(nombre):
+        nombre = nombre * 2
+	    return nombre
+
+    double(5)
+    ```
+
+3.  {aff}`10`
+    ```{code-block} python
+    def double(nombre):
+        return nombre * 2
+
+    resultat = double(5)
+    print(resultat)
+    ```
+
+4.  {aff}`30`
+    ```{code-block} python
+    def double(nombre):
+        return nombre * 2
+
+    print(double(5) + double(10))
+    ```
+```````
+
+````{solution}
+1.  **`5`**  La valeur retournée est le nombre reçu (5). La multiplication est effectuée seulement après la commande `return` et ne sera donc jamais exécutée.
+
+2.  **`rien`** il n'a pas de print, la valeur retournée n'est ainsi pas utilisée 
+
+3.  **`10`**. Cette fois l'appel est capté dans la variable `resultat`, que le `print` affiche ensuite.
+
+4.  **`30`**. Un appel qui retourne une valeur peut s'utiliser directement dans un calcul :
+    `double(5)` vaut 10, `double(10)` vaut 20, et c'est leur somme qui est affichée.
+
+````
+
+### Exercice {num2}`exercice`
+
+Déterminez ce que font les programmes suivants et corrigez les erreurs.
+
+1.  ```{exec} python
+    :editor:
+    def convertit_min_sec(min):
+      return min * 60
+
+    convertit_min_sec(145)
+    print("145 minutes donnent", nb_secondes, "secondes.")
+    ```
+
+2.  ```{exec} python
+    :editor:
+    def convertit_sec_min(sec):
+      min = sec / 60
+
+    nb_minutes = convertit_sec_min(38700)
+    print("38700 secondes donnent", nb_minutes, "minutes.")
+    ```
+
+3.  ```{exec} python
+    :editor:
+    def calcule_double_moins_trois(x):
+      x = 2 * x
+      return x
+      x = x - 3
+
+    print(calcule_double_moins_trois(4))
+    ```
+
+````{solution}
+
+ 1. Il faut sauvegarder la valeur de retour dans la variable nb_secondes
+    ```{exec} python
+    :linenos:
+    def convertit_min_sec(min):
+      return min * 60
+
+    nb_secondes = convertit_min_sec(145)
+    print("145 minutes donnent", nb_secondes, "secondes.")
+    ```
+
+2.  Il manque le `return` dans la fonction. Dans ce cas, la valeur retournée est
+    `None`.
+    ```{exec} python
+    :linenos:
+    def convertit_sec_min(sec):
+      return sec / 60
+
+    nb_minutes = convertit_sec_min(38700)
+    print("38700 secondes donnent", nb_minutes, "minutes.")
+    ```
+
+3.  Le `return` n'est pas à la bonne place.
+    ```{exec} python
+    :linenos:
+    def calcule_double_moins_trois(x):
+      x = 2 * x
+      x = x - 3
+      return x
+
+    print(calcule_double_moins_trois(4))
+    ```
+````
+
 ### Exercice {num2}`exercice`
 
 Sans l'exécuter, déterminez ce que va afficher le programme suivant. Ensuite,
 exécutez-le pour vérifier votre réponse.
 
 ```{exec} python
-def mystery_1(nombre):
-    if nombre <= 4:
-        print("A")
-    if nombre >= 2:
-        print("B")
-    else:
-        print("D")
+:editor:
+def mystery_1(z):
+  z *= 2
+  return z
 
-def mystery_2(nombre):
-    if nombre <= 4:
-        print("A")
-    elif nombre >= 2:
-        print("B")
-    else:
-        print("D")
+def mystery_2(x):
+  x -= 7
+  if x < 0:
+    return x
+  else:
+    return x % 2
 
-mystery_1(1)
-mystery_2(1)
-print("----")
-mystery_1(3)
-mystery_2(3)
-print("----")
-mystery_1(5)
-mystery_2(5)
+y = 5
+print(mystery_1(y))
+print(mystery_2(y))
+print(mystery_2(2 * y))
+print(y // 2)
 ```
+
+### Exercice {num2}`exercice`
+
+Complétez le programme ci-dessous. Nous avons défini une fonction `majeur` pour
+tester si une personne est majeure ou pas.
+
+```{exec} python
+:editor: d62933bb-5602-48e8-b92e-302c5857b135
+def majeur(age):
+  if ... :
+    return True
+  else:
+    return False
+
+# Demandez son âge à l'utilisateur
+age = ...
+
+if majeur(age):
+  print("Tu as le droit de vote")
+else:
+  print("Tu pourras voter dans", ..., "ans.")
+```
+
+````{solution}
+```{exec} python
+def majeur(age):
+  if age >= 18 :
+    return True
+  else:
+    return False
+
+# Demandez son âge à l'utilisateur
+age = int(input("Quel âge as-tu?"))
+
+if majeur(age):
+  print("Tu as le droit de vote")
+else:
+  print("Tu pourras voter dans", 18 - age, "ans.")
+```
+````
+
+### Exercice {num2}`exercice`
+
+1. Écrivez une fonction qui convertit un nombre de bits en octets.
+2. Écrivez une fonction qui convertit un nombre d'octets en bits.
+3. Convertissez 3664000 bits en octets.
+4. Convertissez 512 octets en bits.
+
+```{tip}
+Un octet contient 8 bits.
+```
+
+```{exec} python
+:editor: 6d5cee90-7949-4078-b22d-e2c84a39f4d4
+# Écrire le programme ici
+```
+
+````{solution}
+```{exec} python
+:linenos:
+# Convertit des bits en octets
+def conversion_bits_octets(a):
+  return a / 8
+
+# Convertit des bits en octets
+def conversion_octets_bits(a):
+  return a * 8
+
+nb_octets = conversion_bits_octets(3664000)
+print("La conversion de 3664000 bits en octets donne", nb_octets)
+
+nb_bits = conversion_octets_bits(512)
+print("La conversion de 512 octets en bits donne", nb_bits)
+
+```
+````
+
+### Exercice {num2}`exercice`
+
+Reprenez les claculs de conversion Celsius et Fahrenheit que l'on a fait dans le chapitre *Entrées et sorties* afin de définir une fonction `Conversion_Celsius_Fahrenheit()` et une fonction `Conversion_Fahrenheit_Celsius()`.
+Faites un petit programme de test qui répète 10 fois l'opération suivante:
+
+1. Génère une température aléatoire *c* en Celsius: utilisez la fonction `randint()` vue en haut de la page
+2. Convertit cette température en Fahrenheit 
+3. Convertit cette température à nouveau en Celsius 
+4. Affiche un message d'erreur si le résultat de la double conversion n'est pas égal à la température aléatoire *c* originale
+
+```{exec} python
+:editor: 5f6ee3a3-ab47-43c5-9774-f50cabd75e94
+from random import randint		# import de la fonction randint du module random
+# Complétez le programme
+
+
+```
+
+````{solution}
+```{exec} python
+:linenos:
+from random import randint	# import de la fonction randint du module random
+
+# conversion °C->°F
+def Conversion_Celsius_Fahrenheit(c):
+   return c*9/5 +32
+
+# conversion °F->°C
+def Conversion_Fahrenheit_Celsius(f):
+   return (f - 32) / 1.8
+   
+# test: si on convertit °C->°F->°C on doit retomber sur la valeur initiale
+nb_tests = 10
+nb_succes = 0
+for i in range(nb_tests):
+   c = randint(-40, 50)
+   f = Conversion_Fahrenheit_Celsius(c)
+   c2 = Conversion_Celsius_Fahrenheit(f)
+   print(c, f, c2)
+   if abs(c-c2)< 0.001:
+     nb_succes += 1
+print()
+if nb_tests == nb_succes :
+    print("Le test est réussi!")
+else:
+    print("Le test est raté!")
+
+```
+````
+
+### Exercice {num2}`exercice`
+On veut déterminer si un nombre est premier. Pour ceci, nous allons créer 3 fonctions:
+1.  Ecrivez une fonction `est_diviseur()` qui permet de déterminer si un nombre est diviseur d'un autre nombre
+	```{exec} python
+    :editor: 70746cc6-1686-423d-8665-560905cfc917
+
+	def est_diviseur(nombre, diviseur):
+	# à compléter
+	
+
+	# test de la fonction
+    n = int(input("nombre: "))
+    d = int(input("diviseur: "))
+    print(n , "et", d, ": ", est_diviseur(n, d)) 
+    ```
+
+2.  Une fois que vous avez bien testé votre fonction `est_diviseur()` avec plusieurs paires de nombres, utilisez-la pour définir une nouvelle fonction `plus_petit_diviseur()` qui reçoit un nombre et retourne son plus petit diviseur (qui est plus grand ou égal à 2).
+    ```{exec} python
+    :editor: bba5d2de-9a45-4200-bdd2-570905cfc920
+    def plus_petit_diviseur(...)
+	# à compléter
+	
+    # test de la fonction
+	
+    ```
+
+3.  Une fois que vous avez bien testé votre fonction `plus_petit_diviseur()` avec plusieurs nombres, utilisez-la pour définir une nouvelle fonction `est_premier()` qui reçoit un nombre et retourne `True` si son plus petit diviseur est égal à lui-même.
+    ```{exec} python
+    :editor: dc86de5e-ba35-4f9d-ba0e-570905cfc921
+    # Écrivez votre programme ici
+    ```
+4. Complétez votre programme en demandant à l'utilisteur un nombre, en vérifiant que le nombre entré est bien un nombre positif et en affichant si ce nombre est premier ou pas.
+5. Testez votre fonction avec différents [nombre premiers](https://www.nombres-premiers.fr/liste.html) et non-premiers.
+
+
+````{solution}
+```{exec} python
+:linenos:
+def est_diviseur(nombre, diviseur):
+  if nombre % diviseur == 0:
+    return True
+  else:
+    return False
+
+def plus_petit_diviseur(nombre):
+  for i in range(2, nombre+1):
+    if est_diviseur(nombre, i):
+      return i 
+
+def est_premier(nombre):
+  if plus_petit_diviseur(nombre) == nombre:
+    return True
+  else:
+    return False
+
+nombre = int(input("Choisir un nombre entier strictement positif:"))
+while nombre <= 0:
+  nombre = int(input("Le nombre doit être strictement positif!"
+        "Choisir un nombre entier strictement positif:"))
+
+if est_premier(nombre):
+  print(nombre, "est un nombre premier.")
+else:
+  print(nombre, "n'est pas un nombre premier.")
+
+```
+````

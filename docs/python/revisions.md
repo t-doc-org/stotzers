@@ -11,34 +11,6 @@ solutions: show
 
 Écrivez un programme qui correspond à l'algorithme suivant:
 
-- Demandez à l'utilisateur la longueur de la base d’un triangle.
-- La hauteur de ce triangle vaut 4.55.
-- Calculez et affichez l’aire du triangle
-
-```{exec} python
-:editor: 4ecb5ecf-33a6-4d4d-b800-445e049bc6fd
-# Écrivez le code ici...
-```
-
-````{solution}
-```{exec} python
-:linenos:
-# Définition des données
-base = float(input("Longueur de la base du triangle: "))
-hauteur = 4.55
-
-# Calcul de l'aire du triangle
-aire = (base * hauteur) / 2
-
-# Affichage du résultat
-print("L'aire du triangle est :", aire)
-```
-````
-
-## Exercice {nump}`exercice`
-
-Écrivez un programme qui correspond à l'algorithme suivant:
-
 - Demandez à l'utilisateur son âge.
 - Calculez et affichez son âge dans 22 ans.
 
@@ -55,33 +27,6 @@ age = int(input("Quel est votre âge?"))
 
 # Affichage du résultat
 print("Dans 22 ans, vous aurez:", age + 22)
-```
-````
-
-## Exercice {nump}`exercice`
-
-Écrivez un programme qui correspond à l'algorithme suivant:
-
-Demandez à l'utilisateur sa température corporelle. Si la température est
-supérieure ou égale à 38, affichez qu'il a de la fièvre. Sinon, affichez que sa
-température est normale.
-
-```{exec} python
-:editor: 535ee123-269c-4686-a94f-75c017c08342
-# Écrivez le code ici...
-```
-
-````{solution}
-```{exec} python
-:linenos:
-# Demander la température à l'utilisateur
-temperature = float(input("Entrez votre température corporelle : "))
-
-# Vérifier si l'utilisateur a de la fièvre
-if temperature >= 38:
-    print("Vous avez de la fièvre.")
-else:
-    print("Votre température est normale.")
 ```
 ````
 
@@ -227,42 +172,7 @@ for i in range(1, 16):
 ```
 ````
 
-
-## Exercice {nump}`exercice` (boucle while)
-
-Écrivez un programme qui correspond à l'algorithme suivant:
-
-Une boutique a initialement 200 produits en stock. Chaque jour, 40 produits sont
-vendus.
-- Affichez le nombre de produits restants chaque jour.
-- Affichez "Stock épuisé!" lorsque tous les produits ont été vendus.
-
-
-```{exec} python
-:editor: 2e37947f-c6f8-456e-915e-f8c30b3678c2
-# Écrivez le code ici...
-```
-
-````{solution}
-```{exec} python
-:linenos:
-# Initialisation du nombre de produits en stock
-produits_en_stock = 200
-
-# Tant qu'il y a des produits en stock
-while produits_en_stock > 0:
-    # Réduire le stock de 40 produits chaque jour
-    produits_en_stock -= 40
-
-    # Afficher le nombre de produits restants
-    print(produits_en_stock)
-
-# Afficher que le stock est épuisé une fois que la boucle est terminée
-print("Stock épuisé!")
-```
-````
-
-## Exercice {nump}`exercice` (boucle while)
+## Exercice {nump}`exercice`
 
 Un jeune souhaite s'acheter un nouvel ordinateur qui coûte 1000 CHF. Il peut
 mettre de côté chaque semaine 15 CHF de son argent de poche.
