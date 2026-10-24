@@ -208,3 +208,21 @@ while montant_epargne < 1000:
 print(nb_semaines)
 ```
 ````
+
+## Exercice {nump}`exercice`
+
+Un triplet pythagoricien est un ensemble de 3 nombres entiers $x$, $y$ et $z$ non nuls  tel que $x^2+y^2=z^2$. 
+
+Exemple: $(3; 4; 5)$ est un  triplet pythagoricien, car $3^2+4^2=5^2$
+
+
+Ecrivez un programme, qui travaille par force brute afin d'afficher et de de compter tous les triplets pythagoriciens dont les 3 nombres sont inférieurs ou égaux à 50. 
+
+```{exec} python
+:editor: 15410054-aac5-472f-bf50-4a180f514720
+# Écrivez le code ici...
+```
+
+Indications complémentaires:
+- Vous devez trouver 20 triplets
+- Attention à ne pas compter deux fois le même triplet.
