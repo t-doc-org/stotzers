@@ -23,8 +23,7 @@ En Python, les instructions appartenant à un même **bloc d'instructions** sont
 
 ### Exemple {num2}`exemple`
 
-````{list-grid}
-:style: grid-template-columns: 1fr 1fr;
+````{list-grid} 1fr 1fr
 - # Programme
   ```{exec} python
   :editor:
