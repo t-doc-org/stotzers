@@ -82,8 +82,7 @@ Il a décidé de baptiser ce projet Python, car il est fan de la série télévi
 ## Le langage Python
 Voici les 33 mots-clés du langage Python : 
 
-```{flex-table}
-:class: grid align-center
+```{flex-table} grid align-center
 {t=b}|`and`  	    | `as`   |`assert`| `break` 	|`class`| `continue` | `def`   
 {t=b}| `del`| `elif` | `else` | `except` |`False` |`finally` | `for`  
 {t=b}| `from`| `global`|`if`   | `import` | `in`     | `is`     | `lambda` 
