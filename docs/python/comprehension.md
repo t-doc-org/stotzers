@@ -32,12 +32,11 @@ print(nombre_km, prix_location)
 3. 50 125 (passage dans le if)
 ```
 
+## Variables et boucles
+
 ### Exercice {nump}`exercice`
 
-Sans exécuter le programme, répondez aux questions.
-
-1. Quelle est la valeur stockée dans la variable `n` à la fin du programme?
-2. Qu'est-ce que le programme affiche?
+Répondez sans exécuter le programme: Quelle est la valeur stockée dans la variable `n` à la fin du programme?
 
 Ensuite, exécutez le programme pour vérifier vos réponses.
 
@@ -47,11 +46,6 @@ n = 4
 for _ in range(3):
   n = n + 5
 print(n+1)
-```
-
-```{solution}
-1. n = 19
-2. 20
 ```
 
 ### Exercice {nump}`exercice`
@@ -71,11 +65,8 @@ n = n - 5
 print(n)
 ```
 
-```{solution}
--2.0
-```
 
-### Exercice {nump}`exercice` (boucle while)
+### Exercice {nump}`exercice`
 
 Sans l'exécuter, qu'affiche ce programme:
 
@@ -100,11 +91,11 @@ while n <= 5:
    3\
    4\
    5
-2. 5x§
-3. /
+2. 5
+3. rien du tout...
 ```
 
-### Exercice {nump}`exercice` (boucle while)
+### Exercice {nump}`exercice`
 
 Sans l'exécuter, qu'affiche ce programme si:
 
@@ -133,7 +124,7 @@ while n <= 5:
 3. /
 ```
 
-### Exercice {nump}`exercice` (boucle while)
+### Exercice {nump}`exercice`
 
 Sans l'exécuter, qu'affiche ce programme si:
 
@@ -157,7 +148,7 @@ print(n)
 3. 9
 ```
 
-### Exercice {nump}`exercice` (boucle while)
+### Exercice {nump}`exercice`
 
 Sans l'exécuter, qu'affiche ce programme si:
 
@@ -257,7 +248,7 @@ print("n =", n, "et s =", s)
 
 ```
 
-### Exercice {nump}`exercice` (boucle while)
+### Exercice {nump}`exercice`
 
 Sans exécuter le programme,
 1. Indiquez l'ordre dans lequel les instructions seront exécutées.
@@ -283,7 +274,9 @@ print("J'ai fini!")
    J'ai fini!
 ```
 
-### Exercice {nump}`exercice` (boucle while)
+## Boucles `for` et `while`
+
+### Exercice {nump}`exercice`
 
 Nous aimerions programmer l'algorithme de Syracuse:
 
@@ -326,9 +319,7 @@ print("L'algorithme de Syracuse est terminé et il se termine bien par 4, 2 et 1
 ```
 ````
 
-## Boucle `for` et boucle `while`
-
-### Exercice {nump}`exercice` (boucle while)
+### Exercice {nump}`exercice`
 
 Transformez le code suivant afin d'utiliser une boucle `while` à la place de la
 boucle `for`.
@@ -348,7 +339,7 @@ while n < 20:
 ```
 ````
 
-### Exercice {nump}`exercice` (boucle while)
+### Exercice {nump}`exercice`
 
 Transformez le code suivant afin d'utiliser une boucle `for` à la place de la
 boucle `while`.
@@ -388,7 +379,7 @@ possède 3 solutions :
 -	2693 + 2693 = 5386  {hspace}`2em`	(R=2, O=6, U=9, E=3, V=5 et L=8)
 -	4653 + 4653 = 9306  {hspace}`2em`	(R=4, O=6, U=5, E=3, V=9 et L=0)
 
-Le programme ci-dessous permet de résoudre le cryptarithme ROUE + ROUE = VELO par force brute. Mais il ne respecte pas exactement les règles de base et retourne des solutions qui ne sont pas valides. Corrigez ce programme afin qu'il n'affiche que les solutions valides.
+Le programme ci-dessous permet de résoudre le cryptarithme ROUE + ROUE = VELO par force brute. Mais il ne respecte pas exactement les règles de base et retourne des solutions qui ne sont pas valides. Corrigez ce programme afin qu'il respecte les règles de base des cryptarithmes n'affiche ainsi que les solutions valides.
 ```{exec} python
 :editor: 10459e39-ee44-45c1-9d8a-2278f921e8d4
 # Résolution du Cryptarithme : ROUE + ROUE = VELO

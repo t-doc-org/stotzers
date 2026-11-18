@@ -1,4 +1,5 @@
 % Copyright 2025 Caroline Blank <caro@c-space.org>
+% Copyright 2026 Sylvain Stotzer <sylvain.stotzer@edufr.ch>
 % SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 ```{metadata}
@@ -224,5 +225,5 @@ Ecrivez un programme, qui travaille par force brute afin d'afficher et de de com
 ```
 
 Indications complémentaires:
-- Vous devez trouver 20 triplets
+- Vous devriez trouver 20 triplets
 - Attention à ne pas compter deux fois le même triplet.

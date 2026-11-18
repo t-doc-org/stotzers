@@ -80,10 +80,19 @@ résultat n'est pas celui attendu.
 
 ```{exec} python
 :editor:
-a = int(input("Entrez un nombre:"))
-b = int(input("Entrez un nombre:"))
-somme = a - b
-print("La somme de", a, "et de", b, "est", somme)
+# Ce programme va afficher les nombres pairs plus petits que 20.
+n=0
+while n > 20:
+  print(n)
+  n = n + 2
+```
+
+```{important}
+Les erreurs de syntaxe sont détectées par le compilateur qui affiche un message d'erreur.
+
+Par contre, les erreurs d'exécution et de logique ne produisent pas systématiquement de message d'erreur. Lorsqu'on écrit un programme, il est donc important de **tester tous les différents cas possibles**, afin de trouver toutes les erreurs d'exécution et de logique. 
+
+Pour l'exercice 2 ci-dessous, par exemple, il faut par exemple tester le programme au moins 3 fois: une fois avec un âge qui correspond au tarif enfant, une fois pour le tarif adulte et une fois pour le tarif retraité)
 ```
 
 ## Exercices
@@ -96,7 +105,7 @@ Les programmes suivants contiennent tous une erreur.
 - Corrigez-la.
 
 1.  ```{exec} python
-    :editor: 70746cc6-1686-423d-8665-570905cfc918
+    :editor:
     :reset: show
     longueur = float(input("Entrez la longueur du rectangle:"))
     aire = longueur * largeur
@@ -104,7 +113,7 @@ Les programmes suivants contiennent tous une erreur.
     ```
 
 2.  ```{exec} python
-    :editor: bba5d2de-9a45-4200-bdd2-802d9ac2a449
+    :editor:
     :reset: show
     n = 0
     while n < 10:
@@ -113,7 +122,7 @@ Les programmes suivants contiennent tous une erreur.
     ```
 
 3.  ```{exec} python
-    :editor: dc86de5e-ba35-4f9d-ba0e-c98a0520d8d4
+    :editor:
     :reset: show
     a = 12
     b = a / 4
@@ -124,7 +133,7 @@ Les programmes suivants contiennent tous une erreur.
     ```
 
 4.  ```{exec} python
-    :editor: 6c00a493-81ee-4ff5-854b-d7d844238e6d
+    :editor:
     :reset: show
     i = 0
     while i < 4
@@ -146,6 +155,7 @@ différentes valeurs pour la trouver et corrigez-la.
 
 ```{exec} python
 :editor:
+:reset: show
 age = 18
 if age >= 18:
   print("Tu payes le prix adulte.")

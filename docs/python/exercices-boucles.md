@@ -140,8 +140,8 @@ Cochez la bonne réponse.
     - ```{exec} python
       :when: load
       :class: hidden
-      x = 1
-      while x <= 6:
+      x = 0
+      while x <= 4:
         print(x)
         x += 2
       ```
@@ -186,9 +186,9 @@ Cochez la bonne réponse.
       :when: load
       :class: hidden
       x = 1
-      while x <= 6:
-        x += 3
+      while x <= 7:
         print(x)
+        x += 3
       ```
     ````
     `````

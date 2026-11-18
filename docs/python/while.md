@@ -66,6 +66,11 @@ dans la boucle, sinon la condition sera toujours vraie et la boucle ne
 s'arrêtera jamais (boucle infinie). Cela fait "planter" le programme.
 ```
 
+### Remarque
+Il est toujours possible de convertir une boucle `for` en une boucle `while`. 
+Par contre il n'est pas toujours possible de convertir une boucle `while` en boucle
+`for`, notamment si on ne sait pas à l'avance le nombre d'itérations.
+
 ### Exercice {num2}`exercice`
 
 Sans l'exécuter, qu'affiche ce programme?
@@ -289,7 +294,7 @@ while x < y:
 | 4 |              | 0  | 20 |  |
 | 5 |              | 2  | 20 |  |
 | 6 |              | 2  | 20 | 22 |
-| 3 | 2 < 20: vrai | 0  | 20 |  |
+| 3 | 2 < 20: vrai | 2  | 20 |  |
 | 4 |              | 2  | 16 |  |
 | 5 |              | 4  | 16 |  |
 | 6 |              | 4  | 16 | 20 |
@@ -335,6 +340,7 @@ Vous pouvez rembourser 100 CHF par mois (intérêts compris).
 
 - Combien de mensualités sont nécessaires pour rembourser la totalité du montant?
 - Quel sera le montant total que vous aurez alors payé?
+- et quel sera le montant payé si on augmente la mensualité à 200.-?
 
 ````{tab-set}
 :sync-group: etape
