@@ -42,8 +42,7 @@ Il existe différents exemples d'algorithmes:
 - en mathématiques : résoudre une équation du deuxième degré, déterminer si
   un nombre est premier, etc.
 
-````{list-grid}
-:style: grid-template-columns: 1fr 1fr;
+````{list-grid} 1fr 1fr
 - ```{image} images/laver_les_dents.jpg
 	:alt: Algorithme pour le brossage des dents
 	:width: 70%
